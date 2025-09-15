@@ -2,41 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Sikkim Digital Monasteries Design System - Green Theme
+All colors MUST be HSL. Professional monastery-inspired design.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background System - Soft monastery greens */
+    --background: 120 15% 97%;
+    --foreground: 150 25% 8%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System - Elevated monastery surfaces */
+    --card: 120 20% 99%;
+    --card-foreground: 150 25% 8%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover System */
+    --popover: 120 20% 99%;
+    --popover-foreground: 150 25% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary System - Deep monastery green */
+    --primary: 150 60% 25%;
+    --primary-foreground: 120 15% 98%;
+    --primary-light: 150 45% 35%;
+    --primary-dark: 150 75% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary System - Mountain sage */
+    --secondary: 140 20% 88%;
+    --secondary-foreground: 150 25% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted System - Soft monastery tones */
+    --muted: 140 15% 92%;
+    --muted-foreground: 150 15% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent System - Himalayan gold */
+    --accent: 45 85% 60%;
+    --accent-foreground: 150 25% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive System */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Interactive Elements */
+    --border: 140 20% 85%;
+    --input: 140 20% 90%;
+    --ring: 150 60% 45%;
 
-    --radius: 0.5rem;
+    /* Custom Monastery Colors */
+    --monastery-green: 150 60% 25%;
+    --monastery-light: 150 30% 85%;
+    --monastery-gold: 45 85% 60%;
+    --himalayan-blue: 200 80% 45%;
+    --spiritual-purple: 280 40% 35%;
+    --prayer-orange: 25 85% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(150 60% 25%), hsl(150 45% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(150 60% 25%) 0%, hsl(140 50% 30%) 50%, hsl(45 85% 60%) 100%);
+    --gradient-monastery: linear-gradient(180deg, hsl(120 15% 97%) 0%, hsl(140 15% 92%) 100%);
+    --gradient-spiritual: linear-gradient(135deg, hsl(150 30% 85%) 0%, hsl(120 20% 99%) 100%);
+
+    /* Shadows */
+    --shadow-monastery: 0 4px 20px hsl(150 60% 25% / 0.1);
+    --shadow-elevation: 0 8px 30px hsl(150 60% 25% / 0.15);
+    --shadow-glow: 0 0 40px hsl(45 85% 60% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +90,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - Deep monastery night */
+    --background: 150 30% 8%;
+    --foreground: 120 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 150 25% 10%;
+    --card-foreground: 120 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 150 25% 10%;
+    --popover-foreground: 120 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 150 40% 70%;
+    --primary-foreground: 150 30% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 150 15% 20%;
+    --secondary-foreground: 120 15% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 150 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 85% 60%;
+    --accent-foreground: 150 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 150 15% 25%;
+    --input: 150 15% 25%;
+    --ring: 150 40% 70%;
+
+    --sidebar-background: 150 30% 8%;
+    --sidebar-foreground: 120 15% 95%;
+    --sidebar-primary: 150 40% 70%;
+    --sidebar-primary-foreground: 150 30% 8%;
+    --sidebar-accent: 150 15% 20%;
+    --sidebar-accent-foreground: 120 15% 95%;
+    --sidebar-border: 150 15% 25%;
+    --sidebar-ring: 150 40% 70%;
   }
 }
 
@@ -101,5 +137,160 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-monastery);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-light));
+  }
+}
+
+@layer components {
+  /* Professional Animation Classes */
+  .animate-monastery-fade {
+    animation: monastery-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-monastery-slide {
+    animation: monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-monastery-scale {
+    animation: monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-monastery-glow {
+    animation: monastery-glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Hover Effects */
+  .hover-monastery {
+    @apply transition-all duration-300 hover:shadow-elevation hover:scale-105;
+  }
+
+  .hover-spiritual {
+    @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card;
+  }
+
+  /* Gradient Text */
+  .text-monastery-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Professional buttons */
+  .btn-monastery {
+    @apply bg-gradient-to-r from-monastery-green to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
+  }
+
+  .btn-spiritual {
+    @apply bg-gradient-to-r from-accent to-monastery-gold text-accent-foreground px-6 py-3 rounded-lg shadow-monastery transition-all duration-300 hover:shadow-glow hover:scale-105;
+  }
+
+  /* Loading animations */
+  .loading-monastery {
+    @apply animate-pulse bg-gradient-to-r from-monastery-light to-muted rounded-lg;
+  }
+}
+
+@layer utilities {
+  /* Background gradients */
+  .bg-monastery-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .bg-spiritual-gradient {
+    background: var(--gradient-spiritual);
+  }
+
+  /* Shadows */
+  .shadow-monastery {
+    box-shadow: var(--shadow-monastery);
+  }
+
+  .shadow-elevation {
+    box-shadow: var(--shadow-elevation);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Transitions */
+  .transition-monastery {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes monastery-fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes monastery-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes monastery-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes monastery-glow {
+  from {
+    box-shadow: 0 0 20px hsl(45 85% 60% / 0.2);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(45 85% 60% / 0.4);
   }
 }
