@@ -10,6 +10,10 @@ import MusicPage from "./pages/MusicPage";
 import ManuscriptsPage from "./pages/ManuscriptsPage";
 import MapsPage from "./pages/MapsPage";
 import DonationsPage from "./pages/DonationsPage";
+import MarketplacePage from "./pages/MarketplacePage";
+import VirtualTourPage from "./pages/VirtualTourPage";
+import ContactPage from "./pages/ContactPage";
+import FeedbackPage from "./pages/FeedbackPage";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Helpline from "./components/Helpline";
@@ -31,6 +35,10 @@ const App = () => (
           <Route path="/manuscripts" element={<ManuscriptsPage />} />
           <Route path="/maps" element={<MapsPage />} />
           <Route path="/donations" element={<DonationsPage />} />
+          <Route path="/marketplace" element={<MarketplacePage />} />
+          <Route path="/virtual-tour" element={<VirtualTourPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Helpline />

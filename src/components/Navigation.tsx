@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Church, Home, Calendar, MapPin, Music, BookOpen, Gift, Map, Phone, MessageSquare } from 'lucide-react';
+import { Menu, Church, Home, Calendar, MapPin, Music, BookOpen, Gift, Map, Phone, MessageSquare, ShoppingCart, Camera } from 'lucide-react';
 
 const Navigation = () => {
   const location = useLocation();
@@ -16,6 +16,8 @@ const Navigation = () => {
     { name: 'Manuscripts', path: '/manuscripts', icon: BookOpen },
     { name: 'Maps', path: '/maps', icon: Map },
     { name: 'Donations', path: '/donations', icon: Gift },
+    { name: 'Marketplace', path: '/marketplace', icon: ShoppingCart },
+    { name: 'Virtual Tour', path: '/virtual-tour', icon: Camera },
     { name: 'Contact', path: '/contact', icon: Phone },
     { name: 'Feedback', path: '/feedback', icon: MessageSquare },
   ];

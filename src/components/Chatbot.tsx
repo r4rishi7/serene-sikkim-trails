@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { MessageCircle, Send, MapPin, Navigation, Clock, Info } from 'lucide-react';
+import { MessageCircle, Send, MapPin, Navigation, Clock, Info, Calendar } from 'lucide-react';
 
 interface Message {
   id: number;
@@ -45,6 +45,26 @@ const Chatbot = () => {
       icon: Info,
       text: "Monastery rules",
       action: "rules"
+    },
+    {
+      icon: Calendar,
+      text: "Upcoming events",
+      action: "events"
+    },
+    {
+      icon: MapPin,
+      text: "Nearby homestays",
+      action: "homestays"
+    },
+    {
+      icon: Navigation,
+      text: "Food & restaurants",
+      action: "food"
+    },
+    {
+      icon: Info,
+      text: "Emergency contacts",
+      action: "emergency"
     }
   ];
 
@@ -53,8 +73,12 @@ const Chatbot = () => {
     cafeteria: "The monastery cafeteria is on the ground floor, adjacent to the main prayer hall. Follow the signs for 'Dining Hall' or ask any monk for directions. Meals are served at 7 AM, 12 PM, and 6 PM.",
     prayer_times: "Daily prayer sessions: Morning prayers at 5:30 AM, Afternoon prayers at 12:00 PM, Evening prayers at 6:00 PM. Special ceremonies are announced separately.",
     rules: "Monastery guidelines: Remove shoes before entering prayer halls, maintain silence in meditation areas, photography may be restricted in certain areas, dress modestly, and follow the guidance of monks and volunteers.",
+    events: "📅 Upcoming Events: Dec 25 - Winter Prayer Ceremony at Rumtek | Jan 15 - New Year Meditation at Pemayangtse | Feb 8 - Mask Dance Festival at Enchey. Visit our Events page for registration!",
+    homestays: "🏠 Recommended Homestays: Green Valley Homestay (2km from Rumtek) - ₹1500/night | Mountain View Guest House (Near Pemayangtse) - ₹1200/night | Enchey Lodge (Gangtok) - ₹2000/night. All include traditional meals!",
+    food: "🍽️ Nearby Restaurants: Monastery Kitchen (Traditional Tibetan) - 0.5km | Himalayan Delight (Multi-cuisine) - 1km | Sacred Spice (Vegetarian) - 1.5km | Mountain Cafe (Continental) - 2km. All serve monastery-friendly meals!",
+    emergency: "🚨 Emergency Contacts: Police: 100 | Medical Emergency: 108 | Tourist Helpline: +91-3592-202411 | Monastery Security: +91-9832-555-001 | Local Guide Assistance: +91-9733-444-002",
     directions: "I can help you get directions! Please share your current location or let me know which monastery you'd like to visit. I can also integrate with Google Maps for precise navigation.",
-    default: "I understand you're looking for information about our monasteries. I can help with directions, timings, facilities, and general information. Feel free to ask specific questions!"
+    default: "I understand you're looking for information about our monasteries. I can help with directions, timings, facilities, homestays, food, events, and emergency contacts. Feel free to ask specific questions!"
   };
 
   const handleSendMessage = () => {
@@ -76,12 +100,20 @@ const Chatbot = () => {
       const lowerInput = inputText.toLowerCase();
       if (lowerInput.includes('meditation') || lowerInput.includes('hall')) {
         botResponse = botResponses.meditation_hall;
-      } else if (lowerInput.includes('cafeteria') || lowerInput.includes('dining') || lowerInput.includes('food')) {
+      } else if (lowerInput.includes('cafeteria') || lowerInput.includes('dining')) {
         botResponse = botResponses.cafeteria;
       } else if (lowerInput.includes('prayer') || lowerInput.includes('time') || lowerInput.includes('timing')) {
         botResponse = botResponses.prayer_times;
       } else if (lowerInput.includes('rule') || lowerInput.includes('guideline') || lowerInput.includes('dress')) {
         botResponse = botResponses.rules;
+      } else if (lowerInput.includes('event') || lowerInput.includes('upcoming') || lowerInput.includes('ceremony')) {
+        botResponse = botResponses.events;
+      } else if (lowerInput.includes('homestay') || lowerInput.includes('stay') || lowerInput.includes('accommodation')) {
+        botResponse = botResponses.homestays;
+      } else if (lowerInput.includes('food') || lowerInput.includes('restaurant') || lowerInput.includes('eat') || lowerInput.includes('meal')) {
+        botResponse = botResponses.food;
+      } else if (lowerInput.includes('emergency') || lowerInput.includes('help') || lowerInput.includes('contact') || lowerInput.includes('police')) {
+        botResponse = botResponses.emergency;
       } else if (lowerInput.includes('direction') || lowerInput.includes('location') || lowerInput.includes('where') || lowerInput.includes('how to reach')) {
         botResponse = botResponses.directions;
       }
