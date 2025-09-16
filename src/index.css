@@ -73,19 +73,12 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -137,14 +130,13 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 
   body {
     @apply bg-background text-foreground;
-    /* Buddhist Monastery background with overlay & fade */
     background-image: linear-gradient(
       120deg,
       rgba(255, 241, 192, 0.85) 0%,
       rgba(255, 233, 164, 0.62) 50%,
       rgba(249, 205, 92, 0.49) 100%
     ),
-    url('/monastery-bg.jpg'); /* Place your image as public/monastery-bg.jpg */
+    url('/monastery-bg.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -152,56 +144,35 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
-
   ::-webkit-scrollbar-track {
     background: hsl(var(--muted));
   }
-
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--primary));
     border-radius: 4px;
   }
-
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary-light));
   }
 }
 
 @layer components {
-  /* Professional Animation Classes */
-  .animate-monastery-fade {
-    animation: monastery-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  .animate-monastery-slide {
-    animation: monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  .animate-monastery-scale {
-    animation: monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  }
-
-  .animate-monastery-glow {
-    animation: monastery-glow 2s ease-in-out infinite alternate;
-  }
+  /* Animations */
+  .animate-monastery-fade { animation: monastery-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  .animate-monastery-slide { animation: monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  .animate-monastery-scale { animation: monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+  .animate-monastery-glow { animation: monastery-glow 2s ease-in-out infinite alternate; }
 
   /* Hover Effects */
-  .hover-monastery {
-    @apply transition-all duration-300 hover:shadow-elevation hover:scale-105;
-  }
-
-  .hover-spiritual {
-    @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card;
-  }
+  .hover-monastery { @apply transition-all duration-300 hover:shadow-elevation hover:scale-105; }
+  .hover-spiritual { @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card; }
 
   /* Gradient Text */
   .text-monastery-gradient {
@@ -211,21 +182,13 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     background-clip: text;
   }
 
-  /* Professional buttons */
+  /* Buttons */
   .btn-monastery {
     @apply bg-gradient-to-r from-monastery-saffron to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
   }
-
   .btn-spiritual {
     @apply bg-gradient-to-r from-accent to-monastery-gold text-accent-foreground px-6 py-3 rounded-lg shadow-monastery transition-all duration-300 hover:shadow-glow hover:scale-105;
   }
-
-  /* Loading animations */
-  .loading-monastery {
-    @apply animate-pulse bg-gradient-to-r from-monastery-light to-muted rounded-lg;
-  }
-
-  /* 3D and gradient animated buttons/dialogs */
   .gradient-motion {
     background: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--monastery-gold)));
     background-size: 200% 200%;
@@ -243,127 +206,69 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     box-shadow: 0 12px 40px hsl(var(--monastery-gold) / 0.6), 0 2px 12px hsl(var(--primary) / 0.22);
     transform: translateY(-3px) scale(1.07);
   }
-  .dialog-3d {
-    @apply glass-bg shadow-elevation transition-all duration-500 depth-3d;
-    animation: float-dialog 2.5s ease-in-out infinite alternate;
+
+  /* Glassmorphism + 3D */
+  .glass-bg { @apply bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl; }
+  .depth-3d { @apply shadow-[0_10px_32px_0_rgba(60,28,0,0.22),0_1.5px_9px_0_rgba(255,172,18,0.15)] hover:scale-105 transition-transform duration-500; }
+  .perspective-3d { perspective: 900px; }
+  .card-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .card-3d:hover { transform: rotateY(8deg) scale(1.04); box-shadow: 0 12px 40px hsl(40 90% 65% / 0.4), 0 2px 8px hsl(35 85% 55% / 0.26); }
+
+  /* Typing Effect */
+  .typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid hsl(var(--primary));
+    animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+    font-size: 2.5rem;
+    font-weight: 800;
+    @apply text-monastery-gradient drop-shadow-lg;
   }
 
-  /* Glassmorphism and 3D utilities */
-  .glass-bg {
-    @apply bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl;
-  }
-  .depth-3d {
-    @apply shadow-[0_10px_32px_0_rgba(60,28,0,0.22),0_1.5px_9px_0_rgba(255,172,18,0.15)] hover:scale-105 transition-transform duration-500;
-  }
-  .perspective-3d {
-    perspective: 900px;
-  }
-  .card-3d {
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-  }
-  .card-3d:hover {
-    transform: rotateY(8deg) scale(1.04);
-    box-shadow: 0 12px 40px hsl(40 90% 65% / 0.4), 0 2px 8px hsl(35 85% 55% / 0.26);
+  /* Frame Aura Effect */
+  .frame-effect { position: relative; border-radius: var(--radius); overflow: hidden; }
+  .frame-effect::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, hsl(var(--monastery-saffron)), hsl(var(--monastery-gold)), hsl(var(--accent)), hsl(var(--primary)));
+    background-size: 400% 400%;
+    animation: frame-glow 6s ease infinite;
+    z-index: -1;
+    filter: blur(6px);
   }
 }
 
 @layer utilities {
   /* Background gradients */
-  .bg-monastery-gradient {
-    background: var(--gradient-primary);
-  }
-
-  .bg-hero-gradient {
-    background: var(--gradient-hero);
-  }
-
-  .bg-spiritual-gradient {
-    background: var(--gradient-spiritual);
-  }
+  .bg-monastery-gradient { background: var(--gradient-primary); }
+  .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-spiritual-gradient { background: var(--gradient-spiritual); }
 
   /* Shadows */
-  .shadow-monastery {
-    box-shadow: var(--shadow-monastery);
-  }
-
-  .shadow-elevation {
-    box-shadow: var(--shadow-elevation);
-  }
-
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
+  .shadow-monastery { box-shadow: var(--shadow-monastery); }
+  .shadow-elevation { box-shadow: var(--shadow-elevation); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
 
   /* Transitions */
-  .transition-monastery {
-    transition: var(--transition-smooth);
-  }
+  .transition-monastery { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
 
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
-
-  /* Active/focus state 3D glow */
+  /* Active Glow */
   .active-glow:active, .active-glow:focus {
     box-shadow: 0 0 0 6px hsl(var(--accent) / 0.26), 0 10px 32px hsl(var(--primary) / 0.14);
     outline: none;
   }
 }
 
-/* Keyframe Animations */
-@keyframes monastery-fade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes monastery-slide {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes monastery-scale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes monastery-glow {
-  from {
-    box-shadow: 0 0 20px hsl(40 90% 65% / 0.2);
-  }
-  to {
-    box-shadow: 0 0 30px hsl(40 90% 65% / 0.4);
-  }
-}
-
-@keyframes gradient-move {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-@keyframes float-dialog {
-  0%   { transform: translateY(0px) scale(1);}
-  100% { transform: translateY(-14px) scale(1.01);}
-}
-@keyframes bg-fadein {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+/* Keyframes */
+@keyframes monastery-fade { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes monastery-slide { from {opacity: 0; transform: translateX(-50px);} to {opacity: 1; transform: translateX(0);} }
+@keyframes monastery-scale { from {opacity: 0; transform: scale(0.8);} to {opacity: 1; transform: scale(1);} }
+@keyframes monastery-glow { from { box-shadow: 0 0 20px hsl(40 90% 65% / 0.2);} to { box-shadow: 0 0 30px hsl(40 90% 65% / 0.4);} }
+@keyframes gradient-move { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+@keyframes float-dialog { 0%{ transform: translateY(0px) scale(1);} 100%{ transform: translateY(-14px) scale(1.01);} }
+@keyframes bg-fadein { 0%{ opacity:0;} 100%{ opacity:1;} }
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { from,to { border-color: transparent } 50% { border-color: hsl(var(--primary)); } }
+@keyframes frame-glow { 0%{ background-position:0% 50%;} 50%{ background-position:100% 50%;} 100%{ background-position:0% 50%;} }
