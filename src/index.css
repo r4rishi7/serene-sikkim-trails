@@ -5,6 +5,88 @@
 /* Sikkim Digital Monasteries Design System - Buddhist Theme
 All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 */
+/* Body + Hero Section Background */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+  background: url("monastery-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* Dark gradient overlay to make text readable */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  );
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headings */
+.hero h1, .hero h2, .hero p {
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+/* Button Styling with Gradient Animation */
+.btn-gradient {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 10px;
+  font-weight: 600;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #ff6a00);
+  background-size: 600% 600%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 100, 0, 0.7);
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Secondary Button with Outline */
+.btn-outline {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 10px;
+  font-weight: 600;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  background: transparent;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
 
 @layer base {
   :root {
