@@ -2,69 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Sikkim Digital Monasteries Design System - Green Theme
-All colors MUST be HSL. Professional monastery-inspired design.
+/* Sikkim Digital Monasteries Design System - Buddhist Theme
+All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 */
 
 @layer base {
   :root {
-    /* Background System - Soft monastery greens */
-    --background: 120 15% 97%;
-    --foreground: 150 25% 8%;
+    /* Background System - Warm Buddhist whites and creams */
+    --background: 45 50% 98%;
+    --foreground: 25 15% 8%;
 
-    /* Card System - Elevated monastery surfaces */
-    --card: 120 20% 99%;
-    --card-foreground: 150 25% 8%;
+    /* Card System - Elevated Buddhist surfaces */
+    --card: 45 60% 99%;
+    --card-foreground: 25 15% 8%;
 
     /* Popover System */
-    --popover: 120 20% 99%;
-    --popover-foreground: 150 25% 8%;
+    --popover: 45 60% 99%;
+    --popover-foreground: 25 15% 8%;
 
-    /* Primary System - Deep monastery green */
-    --primary: 150 60% 25%;
-    --primary-foreground: 120 15% 98%;
-    --primary-light: 150 45% 35%;
-    --primary-dark: 150 75% 15%;
+    /* Primary System - Deep saffron */
+    --primary: 35 85% 55%;
+    --primary-foreground: 45 50% 98%;
+    --primary-light: 35 75% 65%;
+    --primary-dark: 35 95% 45%;
 
-    /* Secondary System - Mountain sage */
-    --secondary: 140 20% 88%;
-    --secondary-foreground: 150 25% 8%;
+    /* Secondary System - Warm amber */
+    --secondary: 45 70% 88%;
+    --secondary-foreground: 25 15% 8%;
 
-    /* Muted System - Soft monastery tones */
-    --muted: 140 15% 92%;
-    --muted-foreground: 150 15% 35%;
+    /* Muted System - Soft Buddhist tones */
+    --muted: 45 40% 92%;
+    --muted-foreground: 35 15% 35%;
 
-    /* Accent System - Himalayan gold */
-    --accent: 45 85% 60%;
-    --accent-foreground: 150 25% 8%;
+    /* Accent System - Golden saffron */
+    --accent: 40 90% 65%;
+    --accent-foreground: 25 15% 8%;
 
     /* Destructive System */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
     /* Interactive Elements */
-    --border: 140 20% 85%;
-    --input: 140 20% 90%;
-    --ring: 150 60% 45%;
+    --border: 45 30% 85%;
+    --input: 45 40% 90%;
+    --ring: 35 85% 55%;
 
-    /* Custom Monastery Colors */
-    --monastery-green: 150 60% 25%;
-    --monastery-light: 150 30% 85%;
-    --monastery-gold: 45 85% 60%;
-    --himalayan-blue: 200 80% 45%;
-    --spiritual-purple: 280 40% 35%;
-    --prayer-orange: 25 85% 55%;
+    /* Custom Buddhist Colors */
+    --monastery-saffron: 35 85% 55%;
+    --monastery-light: 45 50% 85%;
+    --monastery-gold: 40 90% 65%;
+    --himalayan-amber: 30 80% 60%;
+    --spiritual-orange: 25 85% 55%;
+    --prayer-cream: 45 60% 95%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(150 60% 25%), hsl(150 45% 35%));
-    --gradient-hero: linear-gradient(135deg, hsl(150 60% 25%) 0%, hsl(140 50% 30%) 50%, hsl(45 85% 60%) 100%);
-    --gradient-monastery: linear-gradient(180deg, hsl(120 15% 97%) 0%, hsl(140 15% 92%) 100%);
-    --gradient-spiritual: linear-gradient(135deg, hsl(150 30% 85%) 0%, hsl(120 20% 99%) 100%);
+    /* Gradients - Warm Buddhist gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(35 85% 55%), hsl(35 75% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 85% 55%) 0%, hsl(40 80% 60%) 50%, hsl(45 90% 70%) 100%);
+    --gradient-monastery: linear-gradient(180deg, hsl(45 50% 98%) 0%, hsl(45 40% 92%) 100%);
+    --gradient-spiritual: linear-gradient(135deg, hsl(45 50% 85%) 0%, hsl(45 60% 99%) 100%);
 
-    /* Shadows */
-    --shadow-monastery: 0 4px 20px hsl(150 60% 25% / 0.1);
-    --shadow-elevation: 0 8px 30px hsl(150 60% 25% / 0.15);
-    --shadow-glow: 0 0 40px hsl(45 85% 60% / 0.3);
+    /* Shadows - Warm Buddhist shadows */
+    --shadow-monastery: 0 4px 20px hsl(35 85% 55% / 0.1);
+    --shadow-elevation: 0 8px 30px hsl(35 85% 55% / 0.15);
+    --shadow-glow: 0 0 40px hsl(40 90% 65% / 0.3);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,43 +90,43 @@ All colors MUST be HSL. Professional monastery-inspired design.
   }
 
   .dark {
-    /* Dark theme - Deep monastery night */
-    --background: 150 30% 8%;
-    --foreground: 120 15% 95%;
+    /* Dark theme - Deep Buddhist night with warm tones */
+    --background: 25 30% 8%;
+    --foreground: 45 15% 95%;
 
-    --card: 150 25% 10%;
-    --card-foreground: 120 15% 95%;
+    --card: 25 25% 10%;
+    --card-foreground: 45 15% 95%;
 
-    --popover: 150 25% 10%;
-    --popover-foreground: 120 15% 95%;
+    --popover: 25 25% 10%;
+    --popover-foreground: 45 15% 95%;
 
-    --primary: 150 40% 70%;
-    --primary-foreground: 150 30% 8%;
+    --primary: 35 70% 65%;
+    --primary-foreground: 25 30% 8%;
 
-    --secondary: 150 15% 20%;
-    --secondary-foreground: 120 15% 95%;
+    --secondary: 35 15% 20%;
+    --secondary-foreground: 45 15% 95%;
 
-    --muted: 150 15% 15%;
-    --muted-foreground: 150 10% 60%;
+    --muted: 25 15% 15%;
+    --muted-foreground: 35 10% 60%;
 
-    --accent: 45 85% 60%;
-    --accent-foreground: 150 30% 8%;
+    --accent: 40 90% 65%;
+    --accent-foreground: 25 30% 8%;
 
     --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 150 15% 25%;
-    --input: 150 15% 25%;
-    --ring: 150 40% 70%;
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 35 70% 65%;
 
-    --sidebar-background: 150 30% 8%;
-    --sidebar-foreground: 120 15% 95%;
-    --sidebar-primary: 150 40% 70%;
-    --sidebar-primary-foreground: 150 30% 8%;
-    --sidebar-accent: 150 15% 20%;
-    --sidebar-accent-foreground: 120 15% 95%;
-    --sidebar-border: 150 15% 25%;
-    --sidebar-ring: 150 40% 70%;
+    --sidebar-background: 25 30% 8%;
+    --sidebar-foreground: 45 15% 95%;
+    --sidebar-primary: 35 70% 65%;
+    --sidebar-primary-foreground: 25 30% 8%;
+    --sidebar-accent: 35 15% 20%;
+    --sidebar-accent-foreground: 45 15% 95%;
+    --sidebar-border: 25 15% 25%;
+    --sidebar-ring: 35 70% 65%;
   }
 }
 
@@ -202,7 +202,7 @@ All colors MUST be HSL. Professional monastery-inspired design.
 
   /* Professional buttons */
   .btn-monastery {
-    @apply bg-gradient-to-r from-monastery-green to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
+    @apply bg-gradient-to-r from-monastery-saffron to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
   }
 
   .btn-spiritual {
@@ -288,9 +288,9 @@ All colors MUST be HSL. Professional monastery-inspired design.
 
 @keyframes monastery-glow {
   from {
-    box-shadow: 0 0 20px hsl(45 85% 60% / 0.2);
+    box-shadow: 0 0 20px hsl(40 90% 65% / 0.2);
   }
   to {
-    box-shadow: 0 0 30px hsl(45 85% 60% / 0.4);
+    box-shadow: 0 0 30px hsl(40 90% 65% / 0.4);
   }
 }

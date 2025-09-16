@@ -50,12 +50,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         // Custom Monastery Colors
-        "monastery-green": "hsl(var(--monastery-green))",
+        "monastery-saffron": "hsl(var(--monastery-saffron))",
         "monastery-light": "hsl(var(--monastery-light))",
         "monastery-gold": "hsl(var(--monastery-gold))",
-        "himalayan-blue": "hsl(var(--himalayan-blue))",
-        "spiritual-purple": "hsl(var(--spiritual-purple))",
-        "prayer-orange": "hsl(var(--prayer-orange))",
+        "himalayan-amber": "hsl(var(--himalayan-amber))",
+        "spiritual-orange": "hsl(var(--spiritual-orange))",
+        "prayer-cream": "hsl(var(--prayer-cream))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -131,10 +131,10 @@ export default {
         },
         "monastery-glow": {
           from: {
-            boxShadow: "0 0 20px hsl(45 85% 60% / 0.2)",
+            boxShadow: "0 0 20px hsl(40 90% 65% / 0.2)",
           },
           to: {
-            boxShadow: "0 0 30px hsl(45 85% 60% / 0.4)",
+            boxShadow: "0 0 30px hsl(40 90% 65% / 0.4)",
           },
         },
       },
