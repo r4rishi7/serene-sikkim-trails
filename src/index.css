@@ -1,33 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Sikkim Digital Monasteries Design System - Buddhist Theme
-All colors MUST be HSL. Professional Buddhist monastery-inspired design.
-*/
-/* Body + Hero Section Background */
+/* Reset + Base */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #fff;
+  background: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  margin: 0 14px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #7B2CBF;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FF6F00;
+}
+
+/* Hero Section */
 .hero {
   position: relative;
   background: url("monastery-bg.jpg") no-repeat center center/cover;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 140px 20px;
 }
 
-/* Dark gradient overlay to make text readable */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.3)
+    rgba(123, 44, 191, 0.85),
+    rgba(249, 168, 37, 0.65)
   );
   z-index: 0;
 }
@@ -37,31 +58,41 @@ body {
   z-index: 1;
 }
 
-/* Headings */
-.hero h1, .hero h2, .hero p {
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
   color: #fff;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
 }
 
-/* Button Styling with Gradient Animation */
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #f9f9f9;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* Primary Gradient Button */
 .btn-gradient {
   position: relative;
   display: inline-block;
-  padding: 12px 30px;
+  padding: 14px 34px;
   margin: 10px;
-  font-weight: 600;
-  border-radius: 12px;
+  font-weight: 700;
+  border-radius: 14px;
   overflow: hidden;
   color: #fff;
-  background: linear-gradient(270deg, #ff6a00, #ee0979, #ff6a00);
-  background-size: 600% 600%;
+  background: linear-gradient(270deg, #FF6F00, #F9A825, #7B2CBF, #FF6F00);
+  background-size: 400% 400%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-gradient:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(255, 100, 0, 0.7);
-  animation: gradientMove 4s ease infinite;
+  box-shadow: 0 0 28px rgba(255, 111, 0, 0.7);
+  animation: gradientMove 5s ease infinite;
 }
 
 @keyframes gradientMove {
@@ -70,287 +101,57 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Secondary Button with Outline */
+/* Secondary Outline Button */
 .btn-outline {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 14px 34px;
   margin: 10px;
-  font-weight: 600;
+  font-weight: 700;
   border: 2px solid #fff;
-  border-radius: 12px;
+  border-radius: 14px;
   background: transparent;
   color: #fff;
   transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-@layer base {
-  :root {
-    /* Background System - Warm Buddhist whites and creams */
-    --background: 45 50% 98%;
-    --foreground: 25 15% 8%;
-
-    /* Card System - Elevated Buddhist surfaces */
-    --card: 45 60% 99%;
-    --card-foreground: 25 15% 8%;
-
-    /* Popover System */
-    --popover: 45 60% 99%;
-    --popover-foreground: 25 15% 8%;
-
-    /* Primary System - Deep saffron */
-    --primary: 35 85% 55%;
-    --primary-foreground: 45 50% 98%;
-    --primary-light: 35 75% 65%;
-    --primary-dark: 35 95% 45%;
-
-    /* Secondary System - Warm amber */
-    --secondary: 45 70% 88%;
-    --secondary-foreground: 25 15% 8%;
-
-    /* Muted System - Soft Buddhist tones */
-    --muted: 45 40% 92%;
-    --muted-foreground: 35 15% 35%;
-
-    /* Accent System - Golden saffron */
-    --accent: 40 90% 65%;
-    --accent-foreground: 25 15% 8%;
-
-    /* Destructive System */
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
-
-    /* Interactive Elements */
-    --border: 45 30% 85%;
-    --input: 45 40% 90%;
-    --ring: 35 85% 55%;
-
-    /* Custom Buddhist Colors */
-    --monastery-saffron: 35 85% 55%;
-    --monastery-light: 45 50% 85%;
-    --monastery-gold: 40 90% 65%;
-    --himalayan-amber: 30 80% 60%;
-    --spiritual-orange: 25 85% 55%;
-    --prayer-cream: 45 60% 95%;
-
-    /* Gradients - Warm Buddhist gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(35 85% 55%), hsl(35 75% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(35 85% 55%) 0%, hsl(40 80% 60%) 50%, hsl(45 90% 70%) 100%);
-    --gradient-monastery: linear-gradient(180deg, hsl(45 50% 98%) 0%, hsl(45 40% 92%) 100%);
-    --gradient-spiritual: linear-gradient(135deg, hsl(45 50% 85%) 0%, hsl(45 60% 99%) 100%);
-
-    /* Shadows - Warm Buddhist shadows */
-    --shadow-monastery: 0 4px 20px hsl(35 85% 55% / 0.1);
-    --shadow-elevation: 0 8px 30px hsl(35 85% 55% / 0.15);
-    --shadow-glow: 0 0 40px hsl(40 90% 65% / 0.3);
-
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 1rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    /* Dark theme - Deep Buddhist night with warm tones */
-    --background: 25 30% 8%;
-    --foreground: 45 15% 95%;
-
-    --card: 25 25% 10%;
-    --card-foreground: 45 15% 95%;
-
-    --popover: 25 25% 10%;
-    --popover-foreground: 45 15% 95%;
-
-    --primary: 35 70% 65%;
-    --primary-foreground: 25 30% 8%;
-
-    --secondary: 35 15% 20%;
-    --secondary-foreground: 45 15% 95%;
-
-    --muted: 25 15% 15%;
-    --muted-foreground: 35 10% 60%;
-
-    --accent: 40 90% 65%;
-    --accent-foreground: 25 30% 8%;
-
-    --destructive: 0 70% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 25 15% 25%;
-    --input: 25 15% 25%;
-    --ring: 35 70% 65%;
-
-    --sidebar-background: 25 30% 8%;
-    --sidebar-foreground: 45 15% 95%;
-    --sidebar-primary: 35 70% 65%;
-    --sidebar-primary-foreground: 25 30% 8%;
-    --sidebar-accent: 35 15% 20%;
-    --sidebar-accent-foreground: 45 15% 95%;
-    --sidebar-border: 25 15% 25%;
-    --sidebar-ring: 35 70% 65%;
-  }
+/* Sections */
+section {
+  padding: 80px 40px;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    background-image: linear-gradient(
-      120deg,
-      rgba(255, 241, 192, 0.85) 0%,
-      rgba(255, 233, 164, 0.62) 50%,
-      rgba(249, 205, 92, 0.49) 100%
-    ),
-    url('/monastery-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    animation: bg-fadein 2.5s cubic-bezier(0.5,0,0.3,1) both;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-light));
-  }
+section h2 {
+  font-size: 2rem;
+  color: #7B2CBF;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-@layer components {
-  /* Animations */
-  .animate-monastery-fade { animation: monastery-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-  .animate-monastery-slide { animation: monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-  .animate-monastery-scale { animation: monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
-  .animate-monastery-glow { animation: monastery-glow 2s ease-in-out infinite alternate; }
-
-  /* Hover Effects */
-  .hover-monastery { @apply transition-all duration-300 hover:shadow-elevation hover:scale-105; }
-  .hover-spiritual { @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card; }
-
-  /* Gradient Text */
-  .text-monastery-gradient {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Buttons */
-  .btn-monastery {
-    @apply bg-gradient-to-r from-monastery-saffron to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
-  }
-  .btn-spiritual {
-    @apply bg-gradient-to-r from-accent to-monastery-gold text-accent-foreground px-6 py-3 rounded-lg shadow-monastery transition-all duration-300 hover:shadow-glow hover:scale-105;
-  }
-  .gradient-motion {
-    background: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--monastery-gold)));
-    background-size: 200% 200%;
-    animation: gradient-move 3s ease-in-out infinite;
-    color: hsl(var(--primary-foreground));
-    @apply transition-all duration-500 shadow-elevation;
-  }
-  .btn-3d {
-    @apply gradient-motion rounded-xl px-8 py-4 font-semibold shadow-lg depth-3d;
-    box-shadow: 0 2px 12px hsl(var(--primary) / 0.25), 0 8px 40px hsl(var(--accent) / 0.11);
-    transition: box-shadow 0.4s, transform 0.4s;
-  }
-  .btn-3d:hover, .btn-3d:active {
-    background-position: 100% 0;
-    box-shadow: 0 12px 40px hsl(var(--monastery-gold) / 0.6), 0 2px 12px hsl(var(--primary) / 0.22);
-    transform: translateY(-3px) scale(1.07);
-  }
-
-  /* Glassmorphism + 3D */
-  .glass-bg { @apply bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl; }
-  .depth-3d { @apply shadow-[0_10px_32px_0_rgba(60,28,0,0.22),0_1.5px_9px_0_rgba(255,172,18,0.15)] hover:scale-105 transition-transform duration-500; }
-  .perspective-3d { perspective: 900px; }
-  .card-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
-  .card-3d:hover { transform: rotateY(8deg) scale(1.04); box-shadow: 0 12px 40px hsl(40 90% 65% / 0.4), 0 2px 8px hsl(35 85% 55% / 0.26); }
-
-  /* Typing Effect */
-  .typing-effect {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid hsl(var(--primary));
-    animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
-    font-size: 2.5rem;
-    font-weight: 800;
-    @apply text-monastery-gradient drop-shadow-lg;
-  }
-
-  /* Frame Aura Effect */
-  .frame-effect { position: relative; border-radius: var(--radius); overflow: hidden; }
-  .frame-effect::before {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    background: linear-gradient(45deg, hsl(var(--monastery-saffron)), hsl(var(--monastery-gold)), hsl(var(--accent)), hsl(var(--primary)));
-    background-size: 400% 400%;
-    animation: frame-glow 6s ease infinite;
-    z-index: -1;
-    filter: blur(6px);
-  }
+section p {
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
 }
 
-@layer utilities {
-  /* Background gradients */
-  .bg-monastery-gradient { background: var(--gradient-primary); }
-  .bg-hero-gradient { background: var(--gradient-hero); }
-  .bg-spiritual-gradient { background: var(--gradient-spiritual); }
-
-  /* Shadows */
-  .shadow-monastery { box-shadow: var(--shadow-monastery); }
-  .shadow-elevation { box-shadow: var(--shadow-elevation); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-
-  /* Transitions */
-  .transition-monastery { transition: var(--transition-smooth); }
-  .transition-bounce { transition: var(--transition-bounce); }
-
-  /* Active Glow */
-  .active-glow:active, .active-glow:focus {
-    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.26), 0 10px 32px hsl(var(--primary) / 0.14);
-    outline: none;
-  }
+/* Footer */
+.footer {
+  background: #7B2CBF;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  font-size: 0.95rem;
 }
-
-/* Keyframes */
-@keyframes monastery-fade { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
-@keyframes monastery-slide { from {opacity: 0; transform: translateX(-50px);} to {opacity: 1; transform: translateX(0);} }
-@keyframes monastery-scale { from {opacity: 0; transform: scale(0.8);} to {opacity: 1; transform: scale(1);} }
-@keyframes monastery-glow { from { box-shadow: 0 0 20px hsl(40 90% 65% / 0.2);} to { box-shadow: 0 0 30px hsl(40 90% 65% / 0.4);} }
-@keyframes gradient-move { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
-@keyframes float-dialog { 0%{ transform: translateY(0px) scale(1);} 100%{ transform: translateY(-14px) scale(1.01);} }
-@keyframes bg-fadein { 0%{ opacity:0;} 100%{ opacity:1;} }
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink { from,to { border-color: transparent } 50% { border-color: hsl(var(--primary)); } }
-@keyframes frame-glow { 0%{ background-position:0% 50%;} 50%{ background-position:100% 50%;} 100%{ background-position:0% 50%;} }
+.footer a {
+  color: #F9A825;
+  text-decoration: none;
+  margin: 0 8px;
+}
+.footer a:hover {
+  color: #FF6F00;
+}
