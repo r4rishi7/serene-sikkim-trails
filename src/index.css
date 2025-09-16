@@ -137,7 +137,18 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 
   body {
     @apply bg-background text-foreground;
-    background: var(--gradient-monastery);
+    /* Buddhist Monastery background with overlay & fade */
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 241, 192, 0.85) 0%,
+      rgba(255, 233, 164, 0.62) 50%,
+      rgba(249, 205, 92, 0.49) 100%
+    ),
+    url('/monastery-bg.jpg'); /* Place your image as public/monastery-bg.jpg */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    animation: bg-fadein 2.5s cubic-bezier(0.5,0,0.3,1) both;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -213,6 +224,48 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
   .loading-monastery {
     @apply animate-pulse bg-gradient-to-r from-monastery-light to-muted rounded-lg;
   }
+
+  /* 3D and gradient animated buttons/dialogs */
+  .gradient-motion {
+    background: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--monastery-gold)));
+    background-size: 200% 200%;
+    animation: gradient-move 3s ease-in-out infinite;
+    color: hsl(var(--primary-foreground));
+    @apply transition-all duration-500 shadow-elevation;
+  }
+  .btn-3d {
+    @apply gradient-motion rounded-xl px-8 py-4 font-semibold shadow-lg depth-3d;
+    box-shadow: 0 2px 12px hsl(var(--primary) / 0.25), 0 8px 40px hsl(var(--accent) / 0.11);
+    transition: box-shadow 0.4s, transform 0.4s;
+  }
+  .btn-3d:hover, .btn-3d:active {
+    background-position: 100% 0;
+    box-shadow: 0 12px 40px hsl(var(--monastery-gold) / 0.6), 0 2px 12px hsl(var(--primary) / 0.22);
+    transform: translateY(-3px) scale(1.07);
+  }
+  .dialog-3d {
+    @apply glass-bg shadow-elevation transition-all duration-500 depth-3d;
+    animation: float-dialog 2.5s ease-in-out infinite alternate;
+  }
+
+  /* Glassmorphism and 3D utilities */
+  .glass-bg {
+    @apply bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl;
+  }
+  .depth-3d {
+    @apply shadow-[0_10px_32px_0_rgba(60,28,0,0.22),0_1.5px_9px_0_rgba(255,172,18,0.15)] hover:scale-105 transition-transform duration-500;
+  }
+  .perspective-3d {
+    perspective: 900px;
+  }
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+  .card-3d:hover {
+    transform: rotateY(8deg) scale(1.04);
+    box-shadow: 0 12px 40px hsl(40 90% 65% / 0.4), 0 2px 8px hsl(35 85% 55% / 0.26);
+  }
 }
 
 @layer utilities {
@@ -249,6 +302,12 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 
   .transition-bounce {
     transition: var(--transition-bounce);
+  }
+
+  /* Active/focus state 3D glow */
+  .active-glow:active, .active-glow:focus {
+    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.26), 0 10px 32px hsl(var(--primary) / 0.14);
+    outline: none;
   }
 }
 
@@ -293,4 +352,18 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
   to {
     box-shadow: 0 0 30px hsl(40 90% 65% / 0.4);
   }
+}
+
+@keyframes gradient-move {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+@keyframes float-dialog {
+  0%   { transform: translateY(0px) scale(1);}
+  100% { transform: translateY(-14px) scale(1.01);}
+}
+@keyframes bg-fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
