@@ -1,157 +1,261 @@
-/* Reset + Base */
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sikkim Digital Monasteries Design System - updated for stronger contrast,
+vibrant saffron/gold accents, visible hero image, refined button gradient motion.
+All colors remain HSL tokens. */
+
+@layer base {
+  :root {
+    /* Background / Foreground */
+    --background: 45 50% 98%;
+    --foreground: 25 15% 8%;
+
+    /* Card / surfaces */
+    --card: 45 60% 99%;
+    --card-foreground: 25 15% 8%;
+
+    /* Primary - deeper, more saturated saffron for vibrancy */
+    --primary: 35 92% 48%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 35 82% 60%;
+    --primary-dark: 35 96% 40%;
+
+    /* Accent - brighter gold */
+    --accent: 42 96% 58%;
+    --accent-foreground: 25 15% 8%;
+
+    /* Muted / UI */
+    --muted: 45 40% 92%;
+    --muted-foreground: 35 15% 35%;
+
+    /* Monastery-specific */
+    --monastery-saffron: 35 92% 48%;
+    --monastery-light: 45 50% 85%;
+    --monastery-gold: 42 96% 58%;
+    --himalayan-amber: 30 82% 58%;
+    --spiritual-orange: 25 85% 52%;
+    --prayer-cream: 45 60% 95%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(35 92% 48%), hsl(35 82% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 92% 48%) 0%, hsl(40 82% 62%) 50%, hsl(42 96% 58%) 100%);
+    --gradient-spiritual: linear-gradient(135deg, hsl(45 50% 85%) 0%, hsl(45 60% 99%) 100%);
+
+    /* Shadows */
+    --shadow-monastery: 0 6px 28px hsl(35 92% 48% / 0.12);
+    --shadow-elevation: 0 12px 40px hsl(35 92% 48% / 0.16);
+    --shadow-glow: 0 0 48px hsl(42 96% 58% / 0.28);
+
+    /* Transitions */
+    --transition-smooth: all 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.62s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Dark theme adjustments (kept warm) */
+    --background: 25 30% 8%;
+    --foreground: 45 15% 95%;
+    --primary: 35 72% 62%;
+    --primary-foreground: 25 30% 8%;
+    --accent: 42 96% 58%;
+    --monastery-gold: 42 96% 58%;
+  }
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 40px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+/* --------- BODY: use image only (no global color overlay) ---------- */
+@layer base {
+  * { @apply border-border; }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Use the image directly so it's crisp. Hero overlay will handle contrast. */
+    background-color: hsl(var(--background));
+    background-image: url('/monastery-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    animation: bg-fadein 1.6s cubic-bezier(0.5,0,0.3,1) both;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  /* Custom scrollbar (subtle) */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary-light)); }
 }
 
-.navbar a {
-  margin: 0 14px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #7B2CBF;
-  transition: color 0.3s ease;
+/* ---------------- Components & Effects ---------------- */
+@layer components {
+  /* Entrance animations */
+  .animate-monastery-fade { animation: monastery-fade 0.9s cubic-bezier(0.4,0,0.2,1) both; }
+  .animate-monastery-slide { animation: monastery-slide 1s cubic-bezier(0.4,0,0.2,1) both; }
+  .animate-monastery-glow { animation: monastery-glow 2.2s ease-in-out infinite alternate; }
+
+  /* Gradient text utility (use sparingly) */
+  .text-monastery-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass / 3D utilities */
+  .glass-bg { @apply bg-white/8 backdrop-blur-md border border-white/10 rounded-2xl; }
+  .depth-3d { @apply transition-transform duration-500; box-shadow: var(--shadow-elevation); }
+  .card-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .card-3d:hover { transform: rotateY(6deg) translateY(-6px) scale(1.03); box-shadow: var(--shadow-glow); }
+
+  /* Frame aura for hero or badges */
+  .frame-effect { position: relative; border-radius: var(--radius); overflow: visible; }
+  .frame-effect::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    background: linear-gradient(120deg,
+      hsl(var(--monastery-saffron)),
+      hsl(var(--monastery-gold)),
+      hsl(var(--accent)));
+    background-size: 400% 400%;
+    filter: blur(8px) saturate(1.1);
+    z-index: 0;
+    animation: frame-glow 8s linear infinite;
+    opacity: 0.95;
+  }
+
+  /* ============= typing hero ============= */
+  .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0ch;                 /* animated to full width */
+    max-width: 100%;
+    border-right: 3px solid hsl(var(--primary));
+    animation: typing 3.6s steps(36, end) 0.4s forwards, blink 0.75s step-end infinite;
+    font-size: clamp(1.6rem, 4.6vw, 3.4rem);
+    line-height: 1.02;
+    font-weight: 800;
+    color: hsl(var(--primary-foreground));
+    text-shadow: 0 8px 30px rgba(6,6,8,0.55);
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ====== Enhanced 3D Gradient button with moving sheen ====== */
+  .btn-3d {
+    @apply relative inline-block rounded-xl px-8 py-3 font-semibold transition-monastery select-none;
+    overflow: hidden;
+    color: hsl(var(--primary-foreground));
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--monastery-gold)));
+    background-size: 300% 300%;
+    animation: gradient-move 6s linear infinite;
+    box-shadow: 0 10px 34px hsl(var(--primary) / 0.16), 0 4px 18px hsl(var(--accent) / 0.08);
+  }
+
+  /* moving sheen overlay */
+  .btn-3d::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 20%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.06) 100%);
+    transform: translateX(-120%);
+    transition: transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+    mix-blend-mode: overlay;
+  }
+
+  .btn-3d:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 18px 46px hsl(var(--monastery-gold) / 0.36), 0 6px 22px hsl(var(--primary) / 0.18);
+    background-position: 100% 50%;
+  }
+
+  .btn-3d:hover::after { transform: translateX(120%); }
+  .btn-3d:active { transform: translateY(-2px) scale(0.995); }
+
+  /* secondary spiritual button */
+  .btn-spiritual {
+    @apply inline-block rounded-lg px-6 py-2.5 font-medium transition-monastery;
+    background: linear-gradient(90deg, hsl(var(--monastery-light)) 0%, hsl(var(--muted)) 100%);
+    color: hsl(var(--accent-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .btn-spiritual:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-elevation); }
+
+  /* active / focus ring */
+  .active-glow:focus, .active-glow:active {
+    outline: none;
+    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.18), 0 12px 36px hsl(var(--primary) / 0.12);
+  }
+
+  /* small pill/badge look (hero nav badge) */
+  .hero-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white/10;
+    color: hsl(var(--primary-dark));
+    backdrop-filter: blur(4px);
+    border: 1px solid hsl(var(--border));
+    z-index: 2;
+  }
 }
 
-.navbar a:hover {
-  color: #FF6F00;
+/* ---------------- Utilities ---------------- */
+@layer utilities {
+  .bg-monastery-gradient { background: var(--gradient-primary); }
+  .bg-spiritual-gradient { background: var(--gradient-spiritual); }
+
+  .shadow-monastery { box-shadow: var(--shadow-monastery); }
+  .shadow-elevation { box-shadow: var(--shadow-elevation); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  .transition-monastery { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  background: url("monastery-bg.jpg") no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 140px 20px;
+/* ---------------- Keyframes ---------------- */
+@keyframes monastery-fade {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes monastery-slide {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes monastery-glow {
+  from { box-shadow: 0 0 18px hsl(var(--monastery-gold) / 0.18); }
+  to   { box-shadow: 0 0 42px hsl(var(--monastery-gold) / 0.36); }
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom right,
-    rgba(123, 44, 191, 0.85),
-    rgba(249, 168, 37, 0.65)
-  );
-  z-index: 0;
-}
-
-.hero * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 0 5px 15px rgba(0,0,0,0.4);
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: #f9f9f9;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
-}
-
-/* Primary Gradient Button */
-.btn-gradient {
-  position: relative;
-  display: inline-block;
-  padding: 14px 34px;
-  margin: 10px;
-  font-weight: 700;
-  border-radius: 14px;
-  overflow: hidden;
-  color: #fff;
-  background: linear-gradient(270deg, #FF6F00, #F9A825, #7B2CBF, #FF6F00);
-  background-size: 400% 400%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-gradient:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 28px rgba(255, 111, 0, 0.7);
-  animation: gradientMove 5s ease infinite;
-}
-
-@keyframes gradientMove {
+/* smoother, longer gradient movement for buttons */
+@keyframes gradient-move {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Secondary Outline Button */
-.btn-outline {
-  display: inline-block;
-  padding: 14px 34px;
-  margin: 10px;
-  font-weight: 700;
-  border: 2px solid #fff;
-  border-radius: 14px;
-  background: transparent;
-  color: #fff;
-  transition: all 0.3s ease;
+/* typing + blink */
+@keyframes typing { from { width: 0ch; } to { width: 40ch; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* frame glow */
+@keyframes frame-glow {
+  0% { background-position: 0% 50%; opacity: 0.85; }
+  50% { background-position: 100% 50%; opacity: 0.98; }
+  100% { background-position: 0% 50%; opacity: 0.85; }
 }
 
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-/* Sections */
-section {
-  padding: 80px 40px;
-}
-
-section h2 {
-  font-size: 2rem;
-  color: #7B2CBF;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-section p {
-  color: #444;
-  max-width: 800px;
-  margin: 0 auto 20px;
-  text-align: center;
-}
-
-/* Footer */
-.footer {
-  background: #7B2CBF;
-  color: #fff;
-  padding: 30px;
-  text-align: center;
-  font-size: 0.95rem;
-}
-.footer a {
-  color: #F9A825;
-  text-decoration: none;
-  margin: 0 8px;
-}
-.footer a:hover {
-  color: #FF6F00;
-}
+/* background fadein */
+@keyframes bg-fadein { 0% { opacity: 0 } 100% { opacity: 1 } }
