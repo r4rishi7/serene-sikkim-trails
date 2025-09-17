@@ -132,13 +132,14 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     @apply bg-background text-foreground;
     background-image: linear-gradient(
       120deg,
-      rgba(255, 241, 192, 0.85) 0%,
-      rgba(255, 233, 164, 0.62) 50%,
-      rgba(249, 205, 92, 0.49) 100%
+      rgba(30, 20, 10, 0.85) 0%,
+      rgba(40, 25, 15, 0.75) 50%,
+      rgba(25, 15, 8, 0.90) 100%
     ),
     url('/monastery-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
     animation: bg-fadein 2.5s cubic-bezier(0.5,0,0.3,1) both;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -169,10 +170,16 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
   .animate-monastery-slide { animation: monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
   .animate-monastery-scale { animation: monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
   .animate-monastery-glow { animation: monastery-glow 2s ease-in-out infinite alternate; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+  .animate-shimmer { animation: shimmer 2s linear infinite; }
 
   /* Hover Effects */
   .hover-monastery { @apply transition-all duration-300 hover:shadow-elevation hover:scale-105; }
   .hover-spiritual { @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card; }
+  .hover-glow { @apply transition-all duration-300 hover:shadow-glow hover:scale-105; }
+  .micro-bounce { @apply transition-transform duration-200 hover:scale-105 active:scale-95; }
+  .text-glow { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6); }
 
   /* Gradient Text */
   .text-monastery-gradient {
@@ -272,3 +279,6 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 @keyframes typing { from { width: 0 } to { width: 100% } }
 @keyframes blink { from,to { border-color: transparent } 50% { border-color: hsl(var(--primary)); } }
 @keyframes frame-glow { 0%{ background-position:0% 50%;} 50%{ background-position:100% 50%;} 100%{ background-position:0% 50%;} }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
