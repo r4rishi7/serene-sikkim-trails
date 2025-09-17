@@ -176,14 +176,14 @@ const EventsPage = () => {
   );
 
   return (
-    <main className="min-h-screen bg-spiritual-gradient py-8">
+    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 animate-monastery-fade">
-          <h1 className="text-5xl font-bold text-monastery-green mb-4">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-4">
             Events & Meditation
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
             Discover upcoming monastery events, watch recorded ceremonies, and practice guided meditation
           </p>
         </div>
@@ -191,7 +191,7 @@ const EventsPage = () => {
         {/* Upcoming Events Slider */}
         <section className="mb-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-monastery-green">Upcoming Events</h2>
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent">Upcoming Events</h2>
             <div className="flex space-x-2">
               <Button 
                 variant="outline" 
@@ -214,28 +214,28 @@ const EventsPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {upcomingEvents.slice(currentUpcomingSlide, currentUpcomingSlide + 3).map((event, index) => (
-              <Card key={index} className="hover-monastery border-monastery-light animate-monastery-scale">
-                <div className="aspect-video bg-monastery-light rounded-t-lg flex items-center justify-center">
-                  <Calendar className="w-12 h-12 text-monastery-green" />
+              <Card key={index} className="bg-slate-800/60 border-amber-500/20 hover:border-amber-400 backdrop-blur-sm hover-glow micro-bounce animate-monastery-scale">
+                <div className="aspect-video bg-slate-700/50 rounded-t-lg flex items-center justify-center">
+                  <Calendar className="w-12 h-12 text-amber-300" />
                 </div>
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <CardTitle className="text-monastery-green">{event.title}</CardTitle>
-                    <Badge className="bg-accent text-accent-foreground">{event.monastery}</Badge>
+                    <CardTitle className="text-amber-200">{event.title}</CardTitle>
+                    <Badge className="bg-amber-500/20 text-amber-300 border-amber-400/30">{event.monastery}</Badge>
                   </div>
-                  <CardDescription>{event.description}</CardDescription>
+                  <CardDescription className="text-amber-100/70">{event.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center text-muted-foreground">
+                    <div className="flex items-center text-amber-100/60">
                       <Calendar className="w-4 h-4 mr-2" />
                       {event.date}
                     </div>
-                    <div className="flex items-center text-muted-foreground">
+                    <div className="flex items-center text-amber-100/60">
                       <Clock className="w-4 h-4 mr-2" />
                       {event.time}
                     </div>
-                    <div className="flex items-center text-muted-foreground">
+                    <div className="flex items-center text-amber-100/60">
                       <Users className="w-4 h-4 mr-2" />
                       {event.capacity}
                     </div>

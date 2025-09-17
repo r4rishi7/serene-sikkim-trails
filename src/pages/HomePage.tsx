@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Mountain, Church, Heart, MapPin, Calendar, Music, BookOpen, Gift } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Chatbot from '@/components/Chatbot';
+import monasteryHeroBg from '@/assets/monastery-hero-bg.png';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -76,6 +77,14 @@ const HomePage = () => {
     <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-black py-20 px-4">
+        {/* Monastery Background Image */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+          <img 
+            src={monasteryHeroBg} 
+            alt="Sikkim Monastery" 
+            className="w-full max-w-4xl h-auto object-contain"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         {/* Floating particles */}
         <div className="absolute inset-0">
