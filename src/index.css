@@ -8,63 +8,69 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 
 @layer base {
   :root {
-    /* Background System - Warm Buddhist whites and creams */
-    --background: 45 50% 98%;
-    --foreground: 25 15% 8%;
+    /* Background System - Bright Sunny Theme */
+    --background: 50 95% 92%;
+    --foreground: 45 25% 15%;
 
-    /* Card System - Elevated Buddhist surfaces */
-    --card: 45 60% 99%;
-    --card-foreground: 25 15% 8%;
+    /* Card System - Light Yellow surfaces */
+    --card: 55 85% 95%;
+    --card-foreground: 40 30% 20%;
 
     /* Popover System */
-    --popover: 45 60% 99%;
-    --popover-foreground: 25 15% 8%;
+    --popover: 55 85% 95%;
+    --popover-foreground: 40 30% 20%;
 
-    /* Primary System - Deep saffron */
-    --primary: 35 85% 55%;
-    --primary-foreground: 45 50% 98%;
-    --primary-light: 35 75% 65%;
-    --primary-dark: 35 95% 45%;
+    /* Primary System - Vibrant Yellow */
+    --primary: 50 95% 60%;
+    --primary-foreground: 45 15% 15%;
+    --primary-light: 52 90% 70%;
+    --primary-dark: 48 100% 50%;
 
-    /* Secondary System - Warm amber */
-    --secondary: 45 70% 88%;
-    --secondary-foreground: 25 15% 8%;
+    /* Secondary System - Cadmium Orange */
+    --secondary: 25 95% 65%;
+    --secondary-foreground: 40 30% 20%;
 
-    /* Muted System - Soft Buddhist tones */
-    --muted: 45 40% 92%;
-    --muted-foreground: 35 15% 35%;
+    /* Muted System - Soft Yellow tones */
+    --muted: 55 70% 88%;
+    --muted-foreground: 40 25% 45%;
 
-    /* Accent System - Golden saffron */
-    --accent: 40 90% 65%;
-    --accent-foreground: 25 15% 8%;
+    /* Accent System - Bright Cadmium Orange */
+    --accent: 20 100% 60%;
+    --accent-foreground: 40 30% 20%;
 
     /* Destructive System */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
     /* Interactive Elements */
-    --border: 45 30% 85%;
-    --input: 45 40% 90%;
-    --ring: 35 85% 55%;
+    --border: 50 60% 80%;
+    --input: 55 70% 85%;
+    --ring: 50 95% 60%;
 
-    /* Custom Buddhist Colors */
-    --monastery-saffron: 35 85% 55%;
-    --monastery-light: 45 50% 85%;
-    --monastery-gold: 40 90% 65%;
-    --himalayan-amber: 30 80% 60%;
-    --spiritual-orange: 25 85% 55%;
-    --prayer-cream: 45 60% 95%;
+    /* Custom Yellow & Orange Colors */
+    --monastery-saffron: 50 95% 60%;
+    --monastery-light: 55 85% 85%;
+    --monastery-gold: 45 100% 65%;
+    --himalayan-amber: 35 95% 70%;
+    --spiritual-orange: 25 95% 65%;
+    --prayer-cream: 55 80% 92%;
+    --cadmium-orange: 20 100% 60%;
+    --bright-yellow: 55 100% 70%;
+    --sunny-gold: 48 95% 68%;
 
-    /* Gradients - Warm Buddhist gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(35 85% 55%), hsl(35 75% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(35 85% 55%) 0%, hsl(40 80% 60%) 50%, hsl(45 90% 70%) 100%);
-    --gradient-monastery: linear-gradient(180deg, hsl(45 50% 98%) 0%, hsl(45 40% 92%) 100%);
-    --gradient-spiritual: linear-gradient(135deg, hsl(45 50% 85%) 0%, hsl(45 60% 99%) 100%);
+    /* Gradients - Vibrant Yellow & Orange */
+    --gradient-primary: linear-gradient(135deg, hsl(50 95% 60%), hsl(45 100% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(55 100% 70%) 0%, hsl(50 95% 60%) 30%, hsl(25 95% 65%) 70%, hsl(20 100% 60%) 100%);
+    --gradient-monastery: linear-gradient(180deg, hsl(55 85% 95%) 0%, hsl(50 70% 88%) 100%);
+    --gradient-spiritual: linear-gradient(135deg, hsl(55 85% 85%) 0%, hsl(50 80% 92%) 100%);
+    --gradient-wave: linear-gradient(45deg, hsl(55 100% 70%) 0%, hsl(50 95% 60%) 25%, hsl(45 100% 65%) 50%, hsl(25 95% 65%) 75%, hsl(20 100% 60%) 100%);
 
-    /* Shadows - Warm Buddhist shadows */
-    --shadow-monastery: 0 4px 20px hsl(35 85% 55% / 0.1);
-    --shadow-elevation: 0 8px 30px hsl(35 85% 55% / 0.15);
-    --shadow-glow: 0 0 40px hsl(40 90% 65% / 0.3);
+    /* Shadows - Bright Yellow & Orange shadows */
+    --shadow-monastery: 0 4px 20px hsl(50 95% 60% / 0.2);
+    --shadow-elevation: 0 8px 30px hsl(50 95% 60% / 0.25);
+    --shadow-glow: 0 0 40px hsl(45 100% 65% / 0.4);
+    --shadow-wave: 0 4px 15px hsl(25 95% 65% / 0.3);
+    --shadow-3d: 0 10px 35px hsl(20 100% 60% / 0.3), 0 4px 12px hsl(50 95% 60% / 0.2);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -83,34 +89,34 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
   }
 
   .dark {
-    /* Dark theme - Deep Buddhist night with warm tones */
-    --background: 25 30% 8%;
-    --foreground: 45 15% 95%;
+    /* Dark theme with vibrant yellow & orange accents */
+    --background: 40 15% 12%;
+    --foreground: 55 30% 95%;
 
-    --card: 25 25% 10%;
-    --card-foreground: 45 15% 95%;
+    --card: 40 20% 15%;
+    --card-foreground: 55 25% 92%;
 
-    --popover: 25 25% 10%;
-    --popover-foreground: 45 15% 95%;
+    --popover: 40 20% 15%;
+    --popover-foreground: 55 25% 92%;
 
-    --primary: 35 70% 65%;
-    --primary-foreground: 25 30% 8%;
+    --primary: 50 85% 65%;
+    --primary-foreground: 40 15% 12%;
 
-    --secondary: 35 15% 20%;
-    --secondary-foreground: 45 15% 95%;
+    --secondary: 25 75% 55%;
+    --secondary-foreground: 55 25% 92%;
 
-    --muted: 25 15% 15%;
-    --muted-foreground: 35 10% 60%;
+    --muted: 40 15% 18%;
+    --muted-foreground: 50 20% 70%;
 
-    --accent: 40 90% 65%;
-    --accent-foreground: 25 30% 8%;
+    --accent: 20 90% 65%;
+    --accent-foreground: 40 15% 12%;
 
     --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 25 15% 25%;
-    --input: 25 15% 25%;
-    --ring: 35 70% 65%;
+    --border: 40 20% 25%;
+    --input: 40 20% 25%;
+    --ring: 50 85% 65%;
 
     --sidebar-background: 25 30% 8%;
     --sidebar-foreground: 45 15% 95%;
@@ -130,19 +136,19 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
 
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(
-      120deg,
-      rgba(30, 20, 10, 0.85) 0%,
-      rgba(40, 25, 15, 0.75) 50%,
-      rgba(25, 15, 8, 0.90) 100%
-    ),
-    url('/monastery-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(
+      135deg,
+      hsl(55 80% 85%) 0%,
+      hsl(50 75% 80%) 25%,
+      hsl(45 85% 75%) 50%,
+      hsl(25 90% 70%) 75%,
+      hsl(20 95% 65%) 100%
+    );
     min-height: 100vh;
-    animation: bg-fadein 2.5s cubic-bezier(0.5,0,0.3,1) both;
+    animation: bg-fadein 2.5s cubic-bezier(0.5,0,0.3,1) both, gradient-shift 8s ease-in-out infinite;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
+    overflow-x: hidden;
   }
 
   html {
@@ -173,13 +179,19 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
   .animate-float { animation: float 3s ease-in-out infinite; }
   .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
   .animate-shimmer { animation: shimmer 2s linear infinite; }
+  .animate-wave { animation: wave-effect 3s ease-in-out infinite; }
+  .animate-3d-float { animation: float-3d 4s ease-in-out infinite; }
+  .animate-title-wave { animation: title-wave 4s ease-in-out infinite; }
+  .animate-gradient-wave { animation: gradient-wave 6s linear infinite; }
 
   /* Hover Effects */
   .hover-monastery { @apply transition-all duration-300 hover:shadow-elevation hover:scale-105; }
   .hover-spiritual { @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card; }
   .hover-glow { @apply transition-all duration-300 hover:shadow-glow hover:scale-105; }
   .micro-bounce { @apply transition-transform duration-200 hover:scale-105 active:scale-95; }
-  .text-glow { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6); }
+  .text-glow { text-shadow: 0 0 30px hsl(50 95% 60% / 0.8), 0 0 60px hsl(45 100% 65% / 0.6), 0 0 90px hsl(25 95% 65% / 0.4); }
+  .hover-wave { @apply transition-all duration-500 hover:shadow-wave hover:scale-110 hover:-translate-y-2; }
+  .hover-3d { @apply transition-all duration-300 hover:shadow-3d hover:scale-105 hover:-translate-y-1 hover:rotate-1; }
 
   /* Gradient Text */
   .text-monastery-gradient {
@@ -189,7 +201,7 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     background-clip: text;
   }
 
-  /* Buttons */
+  /* Buttons with Wave Effects */
   .btn-monastery {
     @apply bg-gradient-to-r from-monastery-saffron to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
   }
@@ -197,29 +209,68 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     @apply bg-gradient-to-r from-accent to-monastery-gold text-accent-foreground px-6 py-3 rounded-lg shadow-monastery transition-all duration-300 hover:shadow-glow hover:scale-105;
   }
   .gradient-motion {
-    background: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--monastery-gold)));
-    background-size: 200% 200%;
-    animation: gradient-move 3s ease-in-out infinite;
+    background: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--cadmium-orange)), hsl(var(--bright-yellow)));
+    background-size: 300% 300%;
+    animation: gradient-wave 4s ease-in-out infinite;
     color: hsl(var(--primary-foreground));
     @apply transition-all duration-500 shadow-elevation;
   }
   .btn-3d {
-    @apply gradient-motion rounded-xl px-8 py-4 font-semibold shadow-lg depth-3d;
-    box-shadow: 0 2px 12px hsl(var(--primary) / 0.25), 0 8px 40px hsl(var(--accent) / 0.11);
-    transition: box-shadow 0.4s, transform 0.4s;
+    @apply gradient-motion rounded-xl px-8 py-4 font-semibold shadow-lg depth-3d relative overflow-hidden;
+    box-shadow: 0 4px 15px hsl(var(--primary) / 0.3), 0 10px 35px hsl(var(--accent) / 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+  .btn-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(55 100% 85% / 0.4), transparent);
+    transition: left 0.5s;
+  }
+  .btn-3d:hover::before {
+    left: 100%;
   }
   .btn-3d:hover, .btn-3d:active {
     background-position: 100% 0;
-    box-shadow: 0 12px 40px hsl(var(--monastery-gold) / 0.6), 0 2px 12px hsl(var(--primary) / 0.22);
-    transform: translateY(-3px) scale(1.07);
+    box-shadow: 0 15px 45px hsl(var(--cadmium-orange) / 0.4), 0 5px 15px hsl(var(--primary) / 0.3);
+    transform: translateY(-4px) scale(1.08) rotateX(5deg);
   }
 
-  /* Glassmorphism + 3D */
-  .glass-bg { @apply bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl; }
-  .depth-3d { @apply shadow-[0_10px_32px_0_rgba(60,28,0,0.22),0_1.5px_9px_0_rgba(255,172,18,0.15)] hover:scale-105 transition-transform duration-500; }
-  .perspective-3d { perspective: 900px; }
-  .card-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
-  .card-3d:hover { transform: rotateY(8deg) scale(1.04); box-shadow: 0 12px 40px hsl(40 90% 65% / 0.4), 0 2px 8px hsl(35 85% 55% / 0.26); }
+  /* Enhanced 3D Effects */
+  .glass-bg { @apply bg-gradient-to-br from-bright-yellow/20 to-cadmium-orange/10 backdrop-blur-lg shadow-2xl border border-sunny-gold/30 rounded-2xl; }
+  .depth-3d { 
+    box-shadow: 0 15px 40px hsl(50 95% 60% / 0.3), 0 5px 15px hsl(25 95% 65% / 0.2);
+    @apply hover:scale-105 transition-all duration-500; 
+  }
+  .perspective-3d { perspective: 1200px; }
+  .card-3d { 
+    transform-style: preserve-3d; 
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); 
+    @apply relative overflow-hidden;
+  }
+  .card-3d:hover { 
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05) translateZ(20px); 
+    box-shadow: 0 20px 50px hsl(50 95% 60% / 0.4), 0 8px 25px hsl(25 95% 65% / 0.3); 
+  }
+  .wave-title {
+    position: relative;
+    display: inline-block;
+  }
+  .wave-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-wave);
+    border-radius: 2px;
+    animation: title-wave 4s ease-in-out infinite;
+  }
 
   /* Typing Effect */
   .typing-effect {
@@ -268,17 +319,22 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
   }
 }
 
-/* Keyframes */
+/* Enhanced Keyframes */
 @keyframes monastery-fade { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
 @keyframes monastery-slide { from {opacity: 0; transform: translateX(-50px);} to {opacity: 1; transform: translateX(0);} }
 @keyframes monastery-scale { from {opacity: 0; transform: scale(0.8);} to {opacity: 1; transform: scale(1);} }
-@keyframes monastery-glow { from { box-shadow: 0 0 20px hsl(40 90% 65% / 0.2);} to { box-shadow: 0 0 30px hsl(40 90% 65% / 0.4);} }
+@keyframes monastery-glow { from { box-shadow: 0 0 30px hsl(50 95% 60% / 0.3);} to { box-shadow: 0 0 50px hsl(25 95% 65% / 0.5);} }
 @keyframes gradient-move { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+@keyframes gradient-wave { 0%{background-position:0% 50%;} 25%{background-position:100% 50%;} 50%{background-position:200% 50%;} 75%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
+@keyframes gradient-shift { 0%, 100%{background-position:0% 0%;} 50%{background-position:100% 100%;} }
 @keyframes float-dialog { 0%{ transform: translateY(0px) scale(1);} 100%{ transform: translateY(-14px) scale(1.01);} }
 @keyframes bg-fadein { 0%{ opacity:0;} 100%{ opacity:1;} }
 @keyframes typing { from { width: 0 } to { width: 100% } }
 @keyframes blink { from,to { border-color: transparent } 50% { border-color: hsl(var(--primary)); } }
 @keyframes frame-glow { 0%{ background-position:0% 50%;} 50%{ background-position:100% 50%;} 100%{ background-position:0% 50%;} }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+@keyframes float-3d { 0%, 100% { transform: translateY(0px) rotateX(0deg); } 50% { transform: translateY(-20px) rotateX(10deg); } }
+@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes wave-effect { 0%, 100% { transform: translateX(0) scale(1); } 25% { transform: translateX(-5px) scale(1.02); } 75% { transform: translateX(5px) scale(0.98); } }
+@keyframes title-wave { 0%, 100% { transform: scaleX(1) translateY(0); opacity: 0.8; } 50% { transform: scaleX(1.1) translateY(-2px); opacity: 1; } }

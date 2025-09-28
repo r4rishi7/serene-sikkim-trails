@@ -75,56 +75,72 @@ const HomePage = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-black py-20 px-4">
-        {/* Monastery Background Image */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-10">
+      {/* Enhanced Hero Section with 3D Effects */}
+      <section className="relative min-h-screen overflow-hidden perspective-3d py-20 px-4 bg-gradient-to-br from-bright-yellow via-sunny-gold to-cadmium-orange">
+        {/* 3D Monastery Background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-15 animate-float-3d">
           <img 
             src={monasteryHeroBg} 
             alt="Sikkim Monastery" 
-            className="w-full max-w-4xl h-auto object-contain"
+            className="w-full max-w-5xl h-auto object-contain transform rotate-1 hover:rotate-0 transition-transform duration-1000"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        {/* Floating particles */}
+        
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-cadmium-orange/30 via-transparent to-bright-yellow/20 animate-gradient-wave"></div>
+        
+        {/* Enhanced Floating Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-2 h-2 bg-monastery-gold rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-32 right-20 w-1 h-1 bg-monastery-saffron rounded-full animate-pulse-soft opacity-40"></div>
-          <div className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-accent rounded-full animate-float opacity-50" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-20 left-10 w-4 h-4 bg-sunny-gold rounded-full animate-float-3d opacity-80 shadow-glow"></div>
+          <div className="absolute top-32 right-20 w-3 h-3 bg-cadmium-orange rounded-full animate-wave opacity-70 shadow-wave"></div>
+          <div className="absolute bottom-40 left-1/4 w-2 h-2 bg-bright-yellow rounded-full animate-float opacity-90 shadow-3d" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 right-1/3 w-5 h-5 bg-monastery-gold rounded-full animate-3d-float opacity-60" style={{animationDelay: '2s'}}></div>
         </div>
-        <div className="relative max-w-7xl mx-auto text-center">
+        
+        {/* 3D Card Container */}
+        <div className="relative max-w-7xl mx-auto text-center card-3d">
           <div className="animate-monastery-fade">
-            <Badge className="mb-6 bg-monastery-gold/20 text-monastery-gold border-monastery-gold/30 px-6 py-2 text-lg backdrop-blur-sm micro-bounce">
-              <Church className="w-5 h-5 mr-2 animate-pulse-soft" />
+            <Badge className="mb-8 bg-gradient-to-r from-bright-yellow/30 to-cadmium-orange/20 text-primary border-sunny-gold/50 px-8 py-3 text-xl backdrop-blur-lg hover-wave shadow-wave">
+              <Church className="w-6 h-6 mr-3 animate-pulse-soft" />
               Sikkim Digital Monasteries
             </Badge>
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 text-glow">
-              <span className="bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
-                Sacred Heritage
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-400 bg-clip-text text-transparent text-glow">
-                of the Himalayas
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-amber-100/90 mb-8 max-w-3xl mx-auto leading-relaxed animate-monastery-slide">
+            
+            {/* Enhanced 3D Title with Wave Effects */}
+            <div className="relative mb-8">
+              <h1 className="text-7xl md:text-9xl font-black mb-6 text-glow wave-title perspective-3d">
+                <span className="block bg-gradient-to-r from-bright-yellow via-sunny-gold to-monastery-gold bg-clip-text text-transparent animate-gradient-wave bg-[length:300%_100%] hover-3d">
+                  Sacred Heritage
+                </span>
+                <span className="block bg-gradient-to-r from-cadmium-orange via-spiritual-orange to-bright-yellow bg-clip-text text-transparent animate-title-wave hover-wave">
+                  of the Himalayas
+                </span>
+              </h1>
+              
+              {/* Animated Wave Lines */}
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-2xl">
+                <div className="h-2 bg-gradient-to-r from-transparent via-sunny-gold to-transparent rounded-full animate-title-wave opacity-80"></div>
+                <div className="h-1 bg-gradient-to-r from-transparent via-cadmium-orange to-transparent rounded-full animate-wave mt-2 opacity-60" style={{animationDelay: '0.5s'}}></div>
+              </div>
+            </div>
+            <p className="text-xl md:text-3xl text-primary/80 mb-12 max-w-4xl mx-auto leading-relaxed animate-monastery-slide font-medium">
               Discover the spiritual treasures of Sikkim's ancient monasteries. Experience sacred traditions, 
-              book authentic visits, and connect with centuries of Buddhist wisdom.
+              book authentic visits, and connect with centuries of Buddhist wisdom through our immersive digital platform.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            
+            {/* Enhanced 3D Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 onClick={() => navigate('/tourism')} 
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white text-lg px-8 py-4 micro-bounce hover-glow shadow-lg"
+                className="btn-3d text-white text-xl px-12 py-6 transform-gpu hover-wave"
               >
-                <MapPin className="w-5 h-5 mr-2 animate-pulse-soft" />
+                <MapPin className="w-6 h-6 mr-3 animate-float" />
                 Plan Your Visit
               </Button>
               <Button 
                 onClick={() => navigate('/events')} 
-                variant="outline" 
-                className="bg-white/10 border-amber-400/50 text-amber-100 hover:bg-amber-400/20 hover:border-amber-400 text-lg px-8 py-4 micro-bounce backdrop-blur-sm"
+                className="bg-gradient-to-r from-bright-yellow/20 to-cadmium-orange/10 border-2 border-sunny-gold/60 text-primary hover:bg-gradient-to-r hover:from-sunny-gold/30 hover:to-bright-yellow/20 hover:border-cadmium-orange text-xl px-12 py-6 backdrop-blur-lg hover-3d shadow-wave"
               >
-                <Calendar className="w-5 h-5 mr-2" />
+                <Calendar className="w-6 h-6 mr-3 animate-wave" />
                 Explore Events
               </Button>
             </div>
@@ -132,30 +148,36 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What Makes Sikkim Special */}
-      <section className="py-20 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-monastery-slide">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-6 micro-bounce">
+      {/* Enhanced Special Section with 3D Cards */}
+      <section className="py-24 px-4 bg-gradient-to-b from-monastery-light via-prayer-cream to-bright-yellow/30 relative overflow-hidden">
+        {/* 3D Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-sunny-gold/10 rounded-full blur-3xl animate-float-3d"></div>
+          <div className="absolute bottom-20 left-20 w-48 h-48 bg-cadmium-orange/10 rounded-full blur-2xl animate-wave"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-center mb-20 animate-monastery-slide">
+            <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-cadmium-orange via-sunny-gold to-bright-yellow bg-clip-text text-transparent mb-8 hover-3d wave-title">
               What Makes Sikkim's Monasteries Special?
             </h2>
-            <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
+            <p className="text-2xl text-primary/70 max-w-4xl mx-auto leading-relaxed">
               Nestled in the Eastern Himalayas, Sikkim's monasteries are living repositories of 
-              Buddhist wisdom, architectural marvels, and spiritual sanctuaries.
+              Buddhist wisdom, architectural marvels, and spiritual sanctuaries that transcend time.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-10 mb-20 perspective-3d">
             {monasteryHighlights.map((monastery, index) => (
-              <Card key={index} className="bg-slate-800/50 border-amber-500/20 hover:border-amber-400/50 backdrop-blur-sm hover-glow micro-bounce animate-monastery-scale" style={{animationDelay: `${index * 0.2}s`}}>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-amber-200">{monastery.name}</CardTitle>
-                    <Badge variant="secondary" className="bg-amber-500/20 text-amber-300 border-amber-400/30">
+              <Card key={index} className="glass-bg border-sunny-gold/30 hover:border-cadmium-orange card-3d hover-wave shadow-3d animate-monastery-scale" style={{animationDelay: `${index * 0.2}s`}}>
+                <CardHeader className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <CardTitle className="text-2xl text-primary font-bold">{monastery.name}</CardTitle>
+                    <Badge className="bg-gradient-to-r from-cadmium-orange/20 to-sunny-gold/30 text-primary border-monastery-gold/40 px-4 py-2">
                       Est. {monastery.established}
                     </Badge>
                   </div>
-                  <CardDescription className="text-base text-amber-100/70">
+                  <CardDescription className="text-lg text-primary/70 leading-relaxed">
                     {monastery.description}
                   </CardDescription>
                 </CardHeader>
@@ -163,28 +185,28 @@ const HomePage = () => {
             ))}
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Enhanced 3D Features Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 perspective-3d">
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="group bg-slate-800/60 border-amber-500/20 hover:border-amber-400 cursor-pointer animate-monastery-fade backdrop-blur-sm hover-glow micro-bounce" 
+                className="group glass-bg border-sunny-gold/30 hover:border-cadmium-orange cursor-pointer animate-monastery-fade card-3d hover-wave shadow-3d" 
                 style={{animationDelay: `${index * 0.1}s`}}
                 onClick={() => navigate(feature.path)}
               >
-                <CardHeader>
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:animate-monastery-glow micro-bounce`}>
-                    <feature.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+                <CardHeader className="p-8">
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:animate-float-3d shadow-wave transform-gpu`}>
+                    <feature.icon className="w-10 h-10 text-white group-hover:scale-125 transition-transform duration-500" />
                   </div>
-                  <CardTitle className="text-amber-200 group-hover:text-amber-100 transition-monastery">
+                  <CardTitle className="text-2xl text-primary group-hover:text-cadmium-orange transition-all duration-300 font-bold">
                     {feature.title}
                   </CardTitle>
-                  <CardDescription className="text-base text-amber-100/70">
+                  <CardDescription className="text-lg text-primary/70 leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <Button variant="ghost" className="w-full text-amber-300 hover:bg-amber-500/20 group-hover:bg-amber-500/30 group-hover:text-amber-100 transition-monastery micro-bounce">
+                <CardContent className="p-8 pt-0">
+                  <Button className="w-full btn-3d text-lg py-4 group-hover:shadow-wave">
                     Explore Now →
                   </Button>
                 </CardContent>
@@ -194,39 +216,44 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Special Features */}
-      <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
-        {/* Background decoration */}
+      {/* Enhanced Digital Experience Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-cadmium-orange/20 via-sunny-gold/10 to-bright-yellow/30 relative overflow-hidden">
+        {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl animate-pulse-soft"></div>
-          <div className="absolute bottom-20 left-10 w-48 h-48 bg-orange-500/5 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-10 right-10 w-80 h-80 bg-bright-yellow/15 rounded-full blur-3xl animate-float-3d"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-cadmium-orange/10 rounded-full blur-3xl animate-wave"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sunny-gold/5 rounded-full blur-3xl animate-gradient-wave"></div>
         </div>
-        <div className="max-w-7xl mx-auto text-center relative">
+        
+        <div className="max-w-7xl mx-auto text-center relative perspective-3d">
           <div className="animate-monastery-fade">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-8 micro-bounce">
+            <h2 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-bright-yellow via-cadmium-orange to-sunny-gold bg-clip-text text-transparent mb-12 hover-3d wave-title">
               Experience Sikkim Monasteries Digitally
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center micro-bounce" style={{animationDelay: '0.1s'}}>
-                <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mb-4 animate-monastery-glow hover-glow">
-                  <Mountain className="w-10 h-10 text-white animate-float" />
+            
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="flex flex-col items-center card-3d hover-wave" style={{animationDelay: '0.1s'}}>
+                <div className="w-28 h-28 bg-gradient-to-br from-bright-yellow to-sunny-gold rounded-full flex items-center justify-center mb-6 shadow-3d animate-float-3d hover-glow">
+                  <Mountain className="w-14 h-14 text-white animate-float" />
                 </div>
-                <h3 className="text-xl font-semibold text-amber-200 mb-2">Himalayan Serenity</h3>
-                <p className="text-amber-100/70">Experience the tranquil atmosphere of monasteries nestled in the world's highest mountains</p>
+                <h3 className="text-2xl font-bold text-primary mb-4">Himalayan Serenity</h3>
+                <p className="text-xl text-primary/70 leading-relaxed">Experience the tranquil atmosphere of monasteries nestled in the world's highest mountains through immersive 3D tours</p>
               </div>
-              <div className="flex flex-col items-center micro-bounce" style={{animationDelay: '0.2s'}}>
-                <div className="w-20 h-20 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-full flex items-center justify-center mb-4 animate-monastery-glow hover-glow">
-                  <Church className="w-10 h-10 text-white animate-pulse-soft" />
+              
+              <div className="flex flex-col items-center card-3d hover-wave" style={{animationDelay: '0.2s'}}>
+                <div className="w-28 h-28 bg-gradient-to-br from-cadmium-orange to-spiritual-orange rounded-full flex items-center justify-center mb-6 shadow-3d animate-float-3d hover-glow">
+                  <Church className="w-14 h-14 text-white animate-pulse-soft" />
                 </div>
-                <h3 className="text-xl font-semibold text-amber-200 mb-2">Ancient Wisdom</h3>
-                <p className="text-amber-100/70">Access centuries-old Buddhist teachings, manuscripts, and traditional practices</p>
+                <h3 className="text-2xl font-bold text-primary mb-4">Ancient Wisdom</h3>
+                <p className="text-xl text-primary/70 leading-relaxed">Access centuries-old Buddhist teachings, digitized manuscripts, and traditional practices preserved for future generations</p>
               </div>
-              <div className="flex flex-col items-center micro-bounce" style={{animationDelay: '0.3s'}}>
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-4 animate-monastery-glow hover-glow">
-                  <Heart className="w-10 h-10 text-white animate-float" style={{animationDelay: '1s'}} />
+              
+              <div className="flex flex-col items-center card-3d hover-wave" style={{animationDelay: '0.3s'}}>
+                <div className="w-28 h-28 bg-gradient-to-br from-sunny-gold to-monastery-gold rounded-full flex items-center justify-center mb-6 shadow-3d animate-float-3d hover-glow">
+                  <Heart className="w-14 h-14 text-white animate-wave" style={{animationDelay: '1s'}} />
                 </div>
-                <h3 className="text-xl font-semibold text-amber-200 mb-2">Spiritual Journey</h3>
-                <p className="text-amber-100/70">Begin your personal spiritual journey with guided meditation and monk teachings</p>
+                <h3 className="text-2xl font-bold text-primary mb-4">Spiritual Journey</h3>
+                <p className="text-xl text-primary/70 leading-relaxed">Begin your personal spiritual journey with guided meditation sessions and authentic monk teachings</p>
               </div>
             </div>
           </div>
