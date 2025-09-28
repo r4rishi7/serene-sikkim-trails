@@ -200,14 +200,14 @@ const MusicPage = () => {
   );
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-8">
+    <main className="min-h-screen bg-spiritual-gradient py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 animate-monastery-fade">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-amber-200 to-yellow-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold text-monastery-green mb-4">
             Sacred Music & Audio
           </h1>
-          <p className="text-xl text-amber-100/80 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Experience the spiritual sounds of Sikkim's monasteries through traditional chants, instrumental music, and guided audio tours
           </p>
         </div>

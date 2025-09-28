@@ -56,9 +56,6 @@ export default {
         "himalayan-amber": "hsl(var(--himalayan-amber))",
         "spiritual-orange": "hsl(var(--spiritual-orange))",
         "prayer-cream": "hsl(var(--prayer-cream))",
-        "cadmium-orange": "hsl(var(--cadmium-orange))",
-        "bright-yellow": "hsl(var(--bright-yellow))",
-        "sunny-gold": "hsl(var(--sunny-gold))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -79,8 +76,6 @@ export default {
         monastery: "var(--shadow-monastery)",
         elevation: "var(--shadow-elevation)",
         glow: "var(--shadow-glow)",
-        wave: "var(--shadow-wave)",
-        "3d": "var(--shadow-3d)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -136,56 +131,10 @@ export default {
         },
         "monastery-glow": {
           from: {
-            boxShadow: "0 0 30px hsl(50 95% 60% / 0.3)",
+            boxShadow: "0 0 20px hsl(40 90% 65% / 0.2)",
           },
           to: {
-            boxShadow: "0 0 50px hsl(25 95% 65% / 0.5)",
-          },
-        },
-        "wave-effect": {
-          "0%, 100%": {
-            transform: "translateX(0) scale(1)",
-          },
-          "25%": {
-            transform: "translateX(-5px) scale(1.02)",
-          },
-          "75%": {
-            transform: "translateX(5px) scale(0.98)",
-          },
-        },
-        "float-3d": {
-          "0%, 100%": {
-            transform: "translateY(0px) rotateX(0deg)",
-          },
-          "50%": {
-            transform: "translateY(-20px) rotateX(10deg)",
-          },
-        },
-        "title-wave": {
-          "0%, 100%": {
-            transform: "scaleX(1) translateY(0)",
-            opacity: "0.8",
-          },
-          "50%": {
-            transform: "scaleX(1.1) translateY(-2px)",
-            opacity: "1",
-          },
-        },
-        "gradient-wave": {
-          "0%": {
-            backgroundPosition: "0% 50%",
-          },
-          "25%": {
-            backgroundPosition: "100% 50%",
-          },
-          "50%": {
-            backgroundPosition: "200% 50%",
-          },
-          "75%": {
-            backgroundPosition: "100% 50%",
-          },
-          "100%": {
-            backgroundPosition: "0% 50%",
+            boxShadow: "0 0 30px hsl(40 90% 65% / 0.4)",
           },
         },
       },
@@ -196,10 +145,6 @@ export default {
         "monastery-slide": "monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "monastery-scale": "monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards",
         "monastery-glow": "monastery-glow 2s ease-in-out infinite alternate",
-        "wave": "wave-effect 3s ease-in-out infinite",
-        "float-3d": "float-3d 4s ease-in-out infinite",
-        "title-wave": "title-wave 4s ease-in-out infinite",
-        "gradient-wave": "gradient-wave 6s linear infinite",
       },
     },
   },

@@ -2,198 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Sikkim Digital Monasteries Design System - Buddhist Theme
-All colors MUST be HSL. Professional Buddhist monastery-inspired design.
-*/
+/* Sikkim Digital Monasteries Design System - updated for stronger contrast,
+vibrant saffron/gold accents, visible hero image, refined button gradient motion.
+All colors remain HSL tokens. */
 
 @layer base {
   :root {
-    /* Background System - Bright Sunny Theme */
-    --background: 50 95% 92%;
-    --foreground: 45 25% 15%;
+    /* Background / Foreground */
+    --background: 45 50% 98%;
+    --foreground: 25 15% 8%;
 
-    /* Card System - Light Yellow surfaces */
-    --card: 55 85% 95%;
-    --card-foreground: 40 30% 20%;
+    /* Card / surfaces */
+    --card: 45 60% 99%;
+    --card-foreground: 25 15% 8%;
 
-    /* Popover System */
-    --popover: 55 85% 95%;
-    --popover-foreground: 40 30% 20%;
+    /* Primary - deeper, more saturated saffron for vibrancy */
+    --primary: 35 92% 48%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 35 82% 60%;
+    --primary-dark: 35 96% 40%;
 
-    /* Primary System - Vibrant Yellow */
-    --primary: 50 95% 60%;
-    --primary-foreground: 45 15% 15%;
-    --primary-light: 52 90% 70%;
-    --primary-dark: 48 100% 50%;
+    /* Accent - brighter gold */
+    --accent: 42 96% 58%;
+    --accent-foreground: 25 15% 8%;
 
-    /* Secondary System - Cadmium Orange */
-    --secondary: 25 95% 65%;
-    --secondary-foreground: 40 30% 20%;
+    /* Muted / UI */
+    --muted: 45 40% 92%;
+    --muted-foreground: 35 15% 35%;
 
-    /* Muted System - Soft Yellow tones */
-    --muted: 55 70% 88%;
-    --muted-foreground: 40 25% 45%;
+    /* Monastery-specific */
+    --monastery-saffron: 35 92% 48%;
+    --monastery-light: 45 50% 85%;
+    --monastery-gold: 42 96% 58%;
+    --himalayan-amber: 30 82% 58%;
+    --spiritual-orange: 25 85% 52%;
+    --prayer-cream: 45 60% 95%;
 
-    /* Accent System - Bright Cadmium Orange */
-    --accent: 20 100% 60%;
-    --accent-foreground: 40 30% 20%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(35 92% 48%), hsl(35 82% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 92% 48%) 0%, hsl(40 82% 62%) 50%, hsl(42 96% 58%) 100%);
+    --gradient-spiritual: linear-gradient(135deg, hsl(45 50% 85%) 0%, hsl(45 60% 99%) 100%);
 
-    /* Destructive System */
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
+    /* Shadows */
+    --shadow-monastery: 0 6px 28px hsl(35 92% 48% / 0.12);
+    --shadow-elevation: 0 12px 40px hsl(35 92% 48% / 0.16);
+    --shadow-glow: 0 0 48px hsl(42 96% 58% / 0.28);
 
-    /* Interactive Elements */
-    --border: 50 60% 80%;
-    --input: 55 70% 85%;
-    --ring: 50 95% 60%;
-
-    /* Custom Yellow & Orange Colors */
-    --monastery-saffron: 50 95% 60%;
-    --monastery-light: 55 85% 85%;
-    --monastery-gold: 45 100% 65%;
-    --himalayan-amber: 35 95% 70%;
-    --spiritual-orange: 25 95% 65%;
-    --prayer-cream: 55 80% 92%;
-    --cadmium-orange: 20 100% 60%;
-    --bright-yellow: 55 100% 70%;
-    --sunny-gold: 48 95% 68%;
-
-    /* Gradients - Vibrant Yellow & Orange */
-    --gradient-primary: linear-gradient(135deg, hsl(50 95% 60%), hsl(45 100% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(55 100% 70%) 0%, hsl(50 95% 60%) 30%, hsl(25 95% 65%) 70%, hsl(20 100% 60%) 100%);
-    --gradient-monastery: linear-gradient(180deg, hsl(55 85% 95%) 0%, hsl(50 70% 88%) 100%);
-    --gradient-spiritual: linear-gradient(135deg, hsl(55 85% 85%) 0%, hsl(50 80% 92%) 100%);
-    --gradient-wave: linear-gradient(45deg, hsl(55 100% 70%) 0%, hsl(50 95% 60%) 25%, hsl(45 100% 65%) 50%, hsl(25 95% 65%) 75%, hsl(20 100% 60%) 100%);
-
-    /* Shadows - Bright Yellow & Orange shadows */
-    --shadow-monastery: 0 4px 20px hsl(50 95% 60% / 0.2);
-    --shadow-elevation: 0 8px 30px hsl(50 95% 60% / 0.25);
-    --shadow-glow: 0 0 40px hsl(45 100% 65% / 0.4);
-    --shadow-wave: 0 4px 15px hsl(25 95% 65% / 0.3);
-    --shadow-3d: 0 10px 35px hsl(20 100% 60% / 0.3), 0 4px 12px hsl(50 95% 60% / 0.2);
-
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Transitions */
+    --transition-smooth: all 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.62s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 1rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark theme with vibrant yellow & orange accents */
-    --background: 40 15% 12%;
-    --foreground: 55 30% 95%;
-
-    --card: 40 20% 15%;
-    --card-foreground: 55 25% 92%;
-
-    --popover: 40 20% 15%;
-    --popover-foreground: 55 25% 92%;
-
-    --primary: 50 85% 65%;
-    --primary-foreground: 40 15% 12%;
-
-    --secondary: 25 75% 55%;
-    --secondary-foreground: 55 25% 92%;
-
-    --muted: 40 15% 18%;
-    --muted-foreground: 50 20% 70%;
-
-    --accent: 20 90% 65%;
-    --accent-foreground: 40 15% 12%;
-
-    --destructive: 0 70% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 40 20% 25%;
-    --input: 40 20% 25%;
-    --ring: 50 85% 65%;
-
-    --sidebar-background: 25 30% 8%;
-    --sidebar-foreground: 45 15% 95%;
-    --sidebar-primary: 35 70% 65%;
-    --sidebar-primary-foreground: 25 30% 8%;
-    --sidebar-accent: 35 15% 20%;
-    --sidebar-accent-foreground: 45 15% 95%;
-    --sidebar-border: 25 15% 25%;
-    --sidebar-ring: 35 70% 65%;
+    /* Dark theme adjustments (kept warm) */
+    --background: 25 30% 8%;
+    --foreground: 45 15% 95%;
+    --primary: 35 72% 62%;
+    --primary-foreground: 25 30% 8%;
+    --accent: 42 96% 58%;
+    --monastery-gold: 42 96% 58%;
   }
 }
 
+/* --------- BODY: use image only (no global color overlay) ---------- */
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(
-      135deg,
-      hsl(55 80% 85%) 0%,
-      hsl(50 75% 80%) 25%,
-      hsl(45 85% 75%) 50%,
-      hsl(25 90% 70%) 75%,
-      hsl(20 95% 65%) 100%
-    );
+    /* Use the image directly so it's crisp. Hero overlay will handle contrast. */
+    background-color: hsl(var(--background));
+    background-image: url('/monastery-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
-    animation: bg-fadein 2.5s cubic-bezier(0.5,0,0.3,1) both, gradient-shift 8s ease-in-out infinite;
+    animation: bg-fadein 1.6s cubic-bezier(0.5,0,0.3,1) both;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    position: relative;
-    overflow-x: hidden;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
+  /* Custom scrollbar (subtle) */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--muted)); }
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--primary));
-    border-radius: 4px;
+    border-radius: 6px;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-light));
-  }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary-light)); }
 }
 
+/* ---------------- Components & Effects ---------------- */
 @layer components {
-  /* Animations */
-  .animate-monastery-fade { animation: monastery-fade 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-  .animate-monastery-slide { animation: monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-  .animate-monastery-scale { animation: monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
-  .animate-monastery-glow { animation: monastery-glow 2s ease-in-out infinite alternate; }
-  .animate-float { animation: float 3s ease-in-out infinite; }
-  .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
-  .animate-shimmer { animation: shimmer 2s linear infinite; }
-  .animate-wave { animation: wave-effect 3s ease-in-out infinite; }
-  .animate-3d-float { animation: float-3d 4s ease-in-out infinite; }
-  .animate-title-wave { animation: title-wave 4s ease-in-out infinite; }
-  .animate-gradient-wave { animation: gradient-wave 6s linear infinite; }
+  /* Entrance animations */
+  .animate-monastery-fade { animation: monastery-fade 0.9s cubic-bezier(0.4,0,0.2,1) both; }
+  .animate-monastery-slide { animation: monastery-slide 1s cubic-bezier(0.4,0,0.2,1) both; }
+  .animate-monastery-glow { animation: monastery-glow 2.2s ease-in-out infinite alternate; }
 
-  /* Hover Effects */
-  .hover-monastery { @apply transition-all duration-300 hover:shadow-elevation hover:scale-105; }
-  .hover-spiritual { @apply transition-all duration-500 hover:bg-gradient-to-r hover:from-monastery-light hover:to-card; }
-  .hover-glow { @apply transition-all duration-300 hover:shadow-glow hover:scale-105; }
-  .micro-bounce { @apply transition-transform duration-200 hover:scale-105 active:scale-95; }
-  .text-glow { text-shadow: 0 0 30px hsl(50 95% 60% / 0.8), 0 0 60px hsl(45 100% 65% / 0.6), 0 0 90px hsl(25 95% 65% / 0.4); }
-  .hover-wave { @apply transition-all duration-500 hover:shadow-wave hover:scale-110 hover:-translate-y-2; }
-  .hover-3d { @apply transition-all duration-300 hover:shadow-3d hover:scale-105 hover:-translate-y-1 hover:rotate-1; }
-
-  /* Gradient Text */
+  /* Gradient text utility (use sparingly) */
   .text-monastery-gradient {
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -201,140 +110,152 @@ All colors MUST be HSL. Professional Buddhist monastery-inspired design.
     background-clip: text;
   }
 
-  /* Buttons with Wave Effects */
-  .btn-monastery {
-    @apply bg-gradient-to-r from-monastery-saffron to-primary text-primary-foreground px-8 py-4 rounded-xl shadow-monastery transition-all duration-300 hover:shadow-elevation hover:scale-105 font-semibold;
-  }
-  .btn-spiritual {
-    @apply bg-gradient-to-r from-accent to-monastery-gold text-accent-foreground px-6 py-3 rounded-lg shadow-monastery transition-all duration-300 hover:shadow-glow hover:scale-105;
-  }
-  .gradient-motion {
-    background: linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--cadmium-orange)), hsl(var(--bright-yellow)));
-    background-size: 300% 300%;
-    animation: gradient-wave 4s ease-in-out infinite;
-    color: hsl(var(--primary-foreground));
-    @apply transition-all duration-500 shadow-elevation;
-  }
-  .btn-3d {
-    @apply gradient-motion rounded-xl px-8 py-4 font-semibold shadow-lg depth-3d relative overflow-hidden;
-    box-shadow: 0 4px 15px hsl(var(--primary) / 0.3), 0 10px 35px hsl(var(--accent) / 0.2);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-  }
-  .btn-3d::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(55 100% 85% / 0.4), transparent);
-    transition: left 0.5s;
-  }
-  .btn-3d:hover::before {
-    left: 100%;
-  }
-  .btn-3d:hover, .btn-3d:active {
-    background-position: 100% 0;
-    box-shadow: 0 15px 45px hsl(var(--cadmium-orange) / 0.4), 0 5px 15px hsl(var(--primary) / 0.3);
-    transform: translateY(-4px) scale(1.08) rotateX(5deg);
-  }
+  /* Glass / 3D utilities */
+  .glass-bg { @apply bg-white/8 backdrop-blur-md border border-white/10 rounded-2xl; }
+  .depth-3d { @apply transition-transform duration-500; box-shadow: var(--shadow-elevation); }
+  .card-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .card-3d:hover { transform: rotateY(6deg) translateY(-6px) scale(1.03); box-shadow: var(--shadow-glow); }
 
-  /* Enhanced 3D Effects */
-  .glass-bg { @apply bg-gradient-to-br from-bright-yellow/20 to-cadmium-orange/10 backdrop-blur-lg shadow-2xl border border-sunny-gold/30 rounded-2xl; }
-  .depth-3d { 
-    box-shadow: 0 15px 40px hsl(50 95% 60% / 0.3), 0 5px 15px hsl(25 95% 65% / 0.2);
-    @apply hover:scale-105 transition-all duration-500; 
-  }
-  .perspective-3d { perspective: 1200px; }
-  .card-3d { 
-    transform-style: preserve-3d; 
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); 
-    @apply relative overflow-hidden;
-  }
-  .card-3d:hover { 
-    transform: rotateY(10deg) rotateX(5deg) scale(1.05) translateZ(20px); 
-    box-shadow: 0 20px 50px hsl(50 95% 60% / 0.4), 0 8px 25px hsl(25 95% 65% / 0.3); 
-  }
-  .wave-title {
-    position: relative;
-    display: inline-block;
-  }
-  .wave-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-wave);
-    border-radius: 2px;
-    animation: title-wave 4s ease-in-out infinite;
-  }
-
-  /* Typing Effect */
-  .typing-effect {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid hsl(var(--primary));
-    animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
-    font-size: 2.5rem;
-    font-weight: 800;
-    @apply text-monastery-gradient drop-shadow-lg;
-  }
-
-  /* Frame Aura Effect */
-  .frame-effect { position: relative; border-radius: var(--radius); overflow: hidden; }
+  /* Frame aura for hero or badges */
+  .frame-effect { position: relative; border-radius: var(--radius); overflow: visible; }
   .frame-effect::before {
     content: "";
     position: absolute;
-    inset: -3px;
-    background: linear-gradient(45deg, hsl(var(--monastery-saffron)), hsl(var(--monastery-gold)), hsl(var(--accent)), hsl(var(--primary)));
+    inset: -6px;
+    background: linear-gradient(120deg,
+      hsl(var(--monastery-saffron)),
+      hsl(var(--monastery-gold)),
+      hsl(var(--accent)));
     background-size: 400% 400%;
-    animation: frame-glow 6s ease infinite;
-    z-index: -1;
-    filter: blur(6px);
+    filter: blur(8px) saturate(1.1);
+    z-index: 0;
+    animation: frame-glow 8s linear infinite;
+    opacity: 0.95;
+  }
+
+  /* ============= typing hero ============= */
+  .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0ch;                 /* animated to full width */
+    max-width: 100%;
+    border-right: 3px solid hsl(var(--primary));
+    animation: typing 3.6s steps(36, end) 0.4s forwards, blink 0.75s step-end infinite;
+    font-size: clamp(1.6rem, 4.6vw, 3.4rem);
+    line-height: 1.02;
+    font-weight: 800;
+    color: hsl(var(--primary-foreground));
+    text-shadow: 0 8px 30px rgba(6,6,8,0.55);
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ====== Enhanced 3D Gradient button with moving sheen ====== */
+  .btn-3d {
+    @apply relative inline-block rounded-xl px-8 py-3 font-semibold transition-monastery select-none;
+    overflow: hidden;
+    color: hsl(var(--primary-foreground));
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--monastery-gold)));
+    background-size: 300% 300%;
+    animation: gradient-move 6s linear infinite;
+    box-shadow: 0 10px 34px hsl(var(--primary) / 0.16), 0 4px 18px hsl(var(--accent) / 0.08);
+  }
+
+  /* moving sheen overlay */
+  .btn-3d::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 20%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0.06) 100%);
+    transform: translateX(-120%);
+    transition: transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+    mix-blend-mode: overlay;
+  }
+
+  .btn-3d:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 18px 46px hsl(var(--monastery-gold) / 0.36), 0 6px 22px hsl(var(--primary) / 0.18);
+    background-position: 100% 50%;
+  }
+
+  .btn-3d:hover::after { transform: translateX(120%); }
+  .btn-3d:active { transform: translateY(-2px) scale(0.995); }
+
+  /* secondary spiritual button */
+  .btn-spiritual {
+    @apply inline-block rounded-lg px-6 py-2.5 font-medium transition-monastery;
+    background: linear-gradient(90deg, hsl(var(--monastery-light)) 0%, hsl(var(--muted)) 100%);
+    color: hsl(var(--accent-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .btn-spiritual:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-elevation); }
+
+  /* active / focus ring */
+  .active-glow:focus, .active-glow:active {
+    outline: none;
+    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.18), 0 12px 36px hsl(var(--primary) / 0.12);
+  }
+
+  /* small pill/badge look (hero nav badge) */
+  .hero-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white/10;
+    color: hsl(var(--primary-dark));
+    backdrop-filter: blur(4px);
+    border: 1px solid hsl(var(--border));
+    z-index: 2;
   }
 }
 
+/* ---------------- Utilities ---------------- */
 @layer utilities {
-  /* Background gradients */
   .bg-monastery-gradient { background: var(--gradient-primary); }
-  .bg-hero-gradient { background: var(--gradient-hero); }
   .bg-spiritual-gradient { background: var(--gradient-spiritual); }
 
-  /* Shadows */
   .shadow-monastery { box-shadow: var(--shadow-monastery); }
   .shadow-elevation { box-shadow: var(--shadow-elevation); }
   .shadow-glow { box-shadow: var(--shadow-glow); }
 
-  /* Transitions */
   .transition-monastery { transition: var(--transition-smooth); }
   .transition-bounce { transition: var(--transition-bounce); }
-
-  /* Active Glow */
-  .active-glow:active, .active-glow:focus {
-    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.26), 0 10px 32px hsl(var(--primary) / 0.14);
-    outline: none;
-  }
 }
 
-/* Enhanced Keyframes */
-@keyframes monastery-fade { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
-@keyframes monastery-slide { from {opacity: 0; transform: translateX(-50px);} to {opacity: 1; transform: translateX(0);} }
-@keyframes monastery-scale { from {opacity: 0; transform: scale(0.8);} to {opacity: 1; transform: scale(1);} }
-@keyframes monastery-glow { from { box-shadow: 0 0 30px hsl(50 95% 60% / 0.3);} to { box-shadow: 0 0 50px hsl(25 95% 65% / 0.5);} }
-@keyframes gradient-move { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
-@keyframes gradient-wave { 0%{background-position:0% 50%;} 25%{background-position:100% 50%;} 50%{background-position:200% 50%;} 75%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
-@keyframes gradient-shift { 0%, 100%{background-position:0% 0%;} 50%{background-position:100% 100%;} }
-@keyframes float-dialog { 0%{ transform: translateY(0px) scale(1);} 100%{ transform: translateY(-14px) scale(1.01);} }
-@keyframes bg-fadein { 0%{ opacity:0;} 100%{ opacity:1;} }
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink { from,to { border-color: transparent } 50% { border-color: hsl(var(--primary)); } }
-@keyframes frame-glow { 0%{ background-position:0% 50%;} 50%{ background-position:100% 50%;} 100%{ background-position:0% 50%;} }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
-@keyframes float-3d { 0%, 100% { transform: translateY(0px) rotateX(0deg); } 50% { transform: translateY(-20px) rotateX(10deg); } }
-@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-@keyframes wave-effect { 0%, 100% { transform: translateX(0) scale(1); } 25% { transform: translateX(-5px) scale(1.02); } 75% { transform: translateX(5px) scale(0.98); } }
-@keyframes title-wave { 0%, 100% { transform: scaleX(1) translateY(0); opacity: 0.8; } 50% { transform: scaleX(1.1) translateY(-2px); opacity: 1; } }
+/* ---------------- Keyframes ---------------- */
+@keyframes monastery-fade {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes monastery-slide {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes monastery-glow {
+  from { box-shadow: 0 0 18px hsl(var(--monastery-gold) / 0.18); }
+  to   { box-shadow: 0 0 42px hsl(var(--monastery-gold) / 0.36); }
+}
+
+/* smoother, longer gradient movement for buttons */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* typing + blink */
+@keyframes typing { from { width: 0ch; } to { width: 40ch; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* frame glow */
+@keyframes frame-glow {
+  0% { background-position: 0% 50%; opacity: 0.85; }
+  50% { background-position: 100% 50%; opacity: 0.98; }
+  100% { background-position: 0% 50%; opacity: 0.85; }
+}
+
+/* background fadein */
+@keyframes bg-fadein { 0% { opacity: 0 } 100% { opacity: 1 } }

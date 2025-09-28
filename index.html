@@ -21,4 +21,29 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+where shud this code be pasted
+
+<!-- Put this inside <body> near top (just below nav) -->
+<section class="hero relative h-[80vh] flex items-center justify-center text-center">
+  <!-- subtle overlay sits on top of the image to enhance contrast -->
+  <div class="absolute inset-0 z-10"
+       style="background: linear-gradient(180deg, rgba(6,6,8,0.40) 0%, rgba(6,6,8,0.18) 55%, rgba(6,6,8,0.48) 100%); backdrop-filter: blur(2px);">
+  </div>
+
+  <div class="relative z-20 max-w-4xl px-6">
+    <div class="hero-badge frame-effect mb-6 inline-block">🏔️ Sikkim Digital Monasteries</div>
+
+    <h1 class="typing-effect mx-auto">DIGITAL MONASTERIES OF SIKKIM</h1>
+
+    <p class="mt-6 text-lg md:text-xl text-white/90 drop-shadow-md">
+      Discover the spiritual treasures of Sikkim's ancient monasteries. Experience sacred traditions, book authentic visits, and connect with centuries of Buddhist wisdom.
+    </p>
+
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <button class="btn-3d active-glow">Plan Your Visit</button>
+      <button class="btn-spiritual active-glow">Explore Events</button>
+    </div>
+  </div>
+</section>
+
 </html>
