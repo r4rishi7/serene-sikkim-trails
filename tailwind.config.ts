@@ -49,13 +49,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom Monastery Colors
-        "monastery-saffron": "hsl(var(--monastery-saffron))",
+        // Custom Monastery Colors - Orange Theme
+        "monastery-orange": "hsl(var(--monastery-orange))",
         "monastery-light": "hsl(var(--monastery-light))",
         "monastery-gold": "hsl(var(--monastery-gold))",
-        "himalayan-amber": "hsl(var(--himalayan-amber))",
+        "cadmium-orange": "hsl(var(--cadmium-orange))",
         "spiritual-orange": "hsl(var(--spiritual-orange))",
         "prayer-cream": "hsl(var(--prayer-cream))",
+        "wave-orange": "hsl(var(--wave-orange))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -122,20 +123,31 @@ export default {
         "monastery-scale": {
           from: {
             opacity: "0",
-            transform: "scale(0.8)",
+            transform: "scale(0.8) rotateY(-10deg)",
           },
           to: {
             opacity: "1",
-            transform: "scale(1)",
+            transform: "scale(1) rotateY(0deg)",
           },
         },
         "monastery-glow": {
-          from: {
-            boxShadow: "0 0 20px hsl(40 90% 65% / 0.2)",
+          "0%, 100%": {
+            boxShadow: "0 0 20px hsl(25 95% 55% / 0.3), 0 0 40px hsl(15 100% 60% / 0.2)",
           },
-          to: {
-            boxShadow: "0 0 30px hsl(40 90% 65% / 0.4)",
+          "50%": {
+            boxShadow: "0 0 30px hsl(25 95% 55% / 0.5), 0 0 60px hsl(15 100% 60% / 0.4)",
           },
+        },
+        "wave-flow": {
+          "0%": { transform: "translateX(-100%) skewX(-15deg)", opacity: "0" },
+          "20%": { opacity: "1" },
+          "80%": { opacity: "1" },
+          "100%": { transform: "translateX(100%) skewX(-15deg)", opacity: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "33%": { transform: "translateY(-10px) rotate(120deg)" },
+          "66%": { transform: "translateY(5px) rotate(240deg)" },
         },
       },
       animation: {
@@ -145,6 +157,8 @@ export default {
         "monastery-slide": "monastery-slide 1s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "monastery-scale": "monastery-scale 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards",
         "monastery-glow": "monastery-glow 2s ease-in-out infinite alternate",
+        "wave-flow": "wave-flow 4s linear infinite",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
